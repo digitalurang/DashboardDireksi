@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Direksi - RS Madina Bukittinggi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #EEF2F7;
+            color: #1E293B;
+            font-size: 14px;
+        }
+
+        /* ===== LAYOUT ===== */
+        .app {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar {
+            width: 220px;
+            min-width: 220px;
+            background: #1B2A4A;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 100;
+            transition: width 0.3s;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .sidebar-logo {
+            padding: 18px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            flex-shrink: 0;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            background: #10B981;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .logo-icon i {
+            color: white;
+            font-size: 20px;
+        }
+
+        .logo-text .name {
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0.4px;
+        }
+
+        .logo-text .sub {
+            color: #94A3B8;
+            font-size: 9.5px;
+            font-weight: 400;
+            letter-spacing: 1.2px;
+        }
+
+        .nav {
+            padding: 10px 0;
+            flex: 1;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            padding: 9px 16px;
+            color: #8899B4;
+            font-size: 12.5px;
+            cursor: pointer;
+            transition: all 0.18s;
+            border-left: 3px solid transparent;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #CBD5E1;
+        }
+
+        .nav-item.active {
+            background: rgba(37, 99, 235, 0.14);
+            color: #FFFFFF;
+            border-left-color: #3B82F6;
+            font-weight: 500;
+        }
+
+        .nav-item i {
+            width: 17px;
+            text-align: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer {
+            padding: 14px 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-footer .refresh-icon {
+            color: #64748B;
+            font-size: 14px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .footer-text {
+            font-size: 11px;
+            color: #8899B4;
+            line-height: 1.6;
+        }
+
+        .footer-text .ft-title {
+            display: block;
+            color: #7A8FA6;
+            font-size: 10.5px;
+            font-weight: 500;
+        }
+
+        /* ===== MAIN ===== */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-width: 0;
+        }
+
+        /* ===== TOPBAR ===== */
+        .topbar {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 12px 24px;
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+            gap: 12px;
+        }
+
+        .topbar-left .tb-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1E293B;
+            letter-spacing: 0.3px;
+        }
+
+        .topbar-left .tb-sub {
+            font-size: 12px;
+            color: #64748B;
+            margin-top: 1px;
+        }
+
+        .topbar-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 7px 12px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            background: #FFFFFF;
+            font-size: 12.5px;
+            color: #1E293B;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            white-space: nowrap;
+        }
+
+        .filter-btn i {
+            color: #64748B;
+            font-size: 11px;
+        }
+
+        .export-btn {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 8px 14px;
+            background: #1B2A4A;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 12.5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            white-space: nowrap;
+        }
+
+        .export-btn:hover {
+            background: #253a62;
+        }
+
+        .notif-wrap {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            background: #FFFFFF;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .notif-wrap i {
+            color: #64748B;
+            font-size: 15px;
+        }
+
+        .notif-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #EF4444;
+            color: #FFFFFF;
+            font-size: 8.5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border: 1.5px solid #FFFFFF;
+        }
+
+        .user-chip {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 5px 10px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .user-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #2563EB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .user-name {
+            font-size: 12.5px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .user-status {
+            font-size: 10.5px;
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .user-status::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10B981;
+        }
+
+        /* ===== CONTENT AREA ===== */
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px 22px 24px;
+        }
+
+        .content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 3px;
+        }
+
+        /* ===== KPI CARDS ===== */
+        .kpi-row {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+
+        .kpi-card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 15px 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .kpi-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .kpi-label {
+            font-size: 11px;
+            color: #64748B;
+            font-weight: 500;
+            line-height: 1.3;
+            max-width: 80px;
+        }
+
+        .kpi-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .kpi-icon i {
+            font-size: 17px;
+            color: #FFFFFF;
+        }
+
+        .kpi-icon.c-green {
+            background: #10B981;
+        }
+
+        .kpi-icon.c-blue {
+            background: #3B82F6;
+        }
+
+        .kpi-icon.c-purple {
+            background: #8B5CF6;
+        }
+
+        .kpi-icon.c-orange {
+            background: #F59E0B;
+        }
+
+        .kpi-icon.c-red {
+            background: #EF4444;
+        }
+
+        .kpi-icon.c-teal {
+            background: #06B6D4;
+        }
+
+        .kpi-val {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .kpi-val.v-purple {
+            color: #8B5CF6;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .kpi-val.v-red {
+            color: #EF4444;
+            font-size: 16px;
+            line-height: 1.3;
+        }
+
+        .kpi-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+        }
+
+        .kpi-badge.up {
+            color: #10B981;
+        }
+
+        .kpi-badge.down {
+            color: #EF4444;
+        }
+
+        .kpi-badge.warning {
+            color: #F59E0B;
+        }
+
+        .kpi-sub {
+            font-size: 11px;
+            color: #94A3B8;
+        }
+
+        /* ===== GENERIC CARD ===== */
+        .card {
+            background: #FFFFFF;
+            border-radius: 12px;
+            padding: 16px 18px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+        }
+
+        .card-title {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #1E293B;
+            letter-spacing: 0.3px;
+        }
+
+        .sel {
+            padding: 5px 28px 5px 10px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 11.5px;
+            color: #475569;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            background: #FFFFFF;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 14px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .sel:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        /* ===== CHART ROWS ===== */
+        .row {
+            display: grid;
+            gap: 13px;
+            margin-bottom: 18px;
+        }
+
+        .row-a {
+            grid-template-columns: 1.55fr 1fr 1fr;
+        }
+
+        .row-b {
+            grid-template-columns: 1.2fr 1.15fr 1fr;
+        }
+
+        .row-c {
+            grid-template-columns: 1fr 1fr 1.15fr;
+        }
+
+        /* ===== BOR CHART ===== */
+        .bor-wrap {
+            position: relative;
+            height: 185px;
+        }
+
+        /* ===== KUNJUNGAN PASIEN ===== */
+        .visit-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 0;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .visit-item:last-child {
+            border-bottom: none;
+        }
+
+        .vi-left {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .vi-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vi-icon i {
+            font-size: 12px;
+        }
+
+        .vi-icon.bg-green {
+            background: #D1FAE5;
+        }
+
+        .vi-icon.bg-green i {
+            color: #10B981;
+        }
+
+        .vi-icon.bg-red {
+            background: #FEE2E2;
+        }
+
+        .vi-icon.bg-red i {
+            color: #EF4444;
+        }
+
+        .vi-icon.bg-purple {
+            background: #EDE9FE;
+        }
+
+        .vi-icon.bg-purple i {
+            color: #8B5CF6;
+        }
+
+        .vi-icon.bg-blue {
+            background: #DBEAFE;
+        }
+
+        .vi-icon.bg-blue i {
+            color: #3B82F6;
+        }
+
+        .vi-name {
+            font-size: 12.5px;
+            color: #475569;
+        }
+
+        .vi-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vi-sparkline {
+            width: 72px;
+            height: 28px;
+        }
+
+        .vi-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1E293B;
+            min-width: 42px;
+            text-align: right;
+        }
+
+        .vi-chg {
+            font-size: 11px;
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .vi-chg i {
+            font-size: 8px;
+        }
+
+        /* ===== PENDAPATAN DONUT ===== */
+        .pend-wrap {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .pend-donut {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            flex-shrink: 0;
+        }
+
+        .pend-donut canvas {
+            display: block;
+        }
+
+        .pend-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .pend-center .pc-label {
+            font-size: 10px;
+            color: #64748B;
+        }
+
+        .pend-center .pc-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1.2;
+        }
+
+        .leg-list {
+            flex: 1;
+        }
+
+        .leg-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 11px;
+        }
+
+        .leg-left {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .leg-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        .leg-name {
+            color: #64748B;
+        }
+
+        .leg-val {
+            color: #1E293B;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .card-note {
+            margin-top: 11px;
+            font-size: 11px;
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 500;
+        }
+
+        /* ===== TOP 5 BARS ===== */
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 11px;
+        }
+
+        .bar-lbl {
+            font-size: 12px;
+            color: #475569;
+            width: 88px;
+            flex-shrink: 0;
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 8px;
+            background: #F1F5F9;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        .bar-amt {
+            font-size: 12px;
+            font-weight: 600;
+            color: #1E293B;
+            width: 68px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .bar-footer {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #E2E8F0;
+            padding-top: 10px;
+            margin-top: 3px;
+        }
+
+        .bar-footer-lbl {
+            font-size: 12px;
+            color: #475569;
+        }
+
+        .bar-footer-val {
+            font-size: 13px;
+            font-weight: 700;
+            color: #10B981;
+        }
+
+        /* ===== RINGKASAN KEUANGAN ===== */
+        .fin-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .fin-item {}
+
+        .fin-lbl {
+            font-size: 10.5px;
+            color: #64748B;
+            margin-bottom: 3px;
+        }
+
+        .fin-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1.2;
+        }
+
+        .fin-chg {
+            font-size: 11px;
+            color: #10B981;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-top: 3px;
+        }
+
+        .fin-chg i {
+            font-size: 8px;
+        }
+
+        .cf-section {
+            border-top: 1px solid #F1F5F9;
+            padding-top: 12px;
+        }
+
+        .cf-lbl {
+            font-size: 10.5px;
+            color: #64748B;
+            margin-bottom: 3px;
+        }
+
+        .cf-val {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E293B;
+            margin-bottom: 6px;
+        }
+
+        .cf-chart-wrap {
+            height: 48px;
+            margin-bottom: 8px;
+        }
+
+        .cf-warn {
+            font-size: 11.5px;
+            color: #D97706;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            background: #FEF3C7;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #FDE68A;
+        }
+
+        /* ===== KOMPLAIN ===== */
+        .kom-wrap {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .kom-donut {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+        }
+
+        .kom-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .kom-center .kc-lbl {
+            font-size: 10px;
+            color: #64748B;
+        }
+
+        .kom-center .kc-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1.1;
+        }
+
+        .kom-leg {
+            flex: 1;
+        }
+
+        .kom-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 7px;
+            font-size: 11px;
+        }
+
+        .kom-left {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .kom-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .kom-name {
+            color: #475569;
+        }
+
+        .kom-val {
+            color: #1E293B;
+            font-weight: 600;
+        }
+
+        .detail-link {
+            font-size: 11.5px;
+            color: #2563EB;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .detail-link i {
+            font-size: 9px;
+        }
+
+        .detail-link:hover {
+            color: #1d4ed8;
+        }
+
+        /* ===== KEHADIRAN SDM ===== */
+        .sdm-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .sdm-box {
+            border-radius: 9px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+
+        .sdm-box.s-total {
+            background: #F8FAFC;
+        }
+
+        .sdm-box.s-hadir {
+            background: #F0FDF4;
+        }
+
+        .sdm-box.s-lambat {
+            background: #FFFBEB;
+        }
+
+        .sdm-box.s-absen {
+            background: #FEF2F2;
+        }
+
+        .sdm-lbl {
+            font-size: 10px;
+            color: #64748B;
+            margin-bottom: 4px;
+        }
+
+        .sdm-val {
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .sdm-val.sv-dark {
+            color: #1E293B;
+        }
+
+        .sdm-val.sv-green {
+            color: #10B981;
+        }
+
+        .sdm-val.sv-orange {
+            color: #F59E0B;
+        }
+
+        .sdm-val.sv-red {
+            color: #EF4444;
+        }
+
+        .sdm-pct {
+            font-size: 11px;
+            color: #64748B;
+            margin-top: 3px;
+        }
+
+        /* ===== BED AVAILABILITY ===== */
+        .bed-content {
+            display: flex;
+            align-items: flex-end;
+            gap: 20px;
+        }
+
+        .bed-gauge-wrap {
+            position: relative;
+            text-align: center;
+            flex-shrink: 0;
+            margin-bottom: 0;
+            width: 140px;
+        }
+
+        .bed-gauge-canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .bed-center {
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .bed-center .bc-num {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1E293B;
+            line-height: 1;
+        }
+
+        .bed-center .bc-lbl {
+            font-size: 10px;
+            color: #64748B;
+        }
+
+        .bed-stats {
+            flex: 1;
+        }
+
+        .bed-stats .bs-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #F1F5F9;
+            font-size: 11.5px;
+        }
+
+        .bed-stats .bs-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .bs-lbl {
+            color: #64748B;
+        }
+
+        .bs-val {
+            font-weight: 600;
+            color: #1E293B;
+        }
+
+        .bs-pct {
+            color: #94A3B8;
+            font-size: 11px;
+        }
+
+        /* ===== ALERTS ===== */
+        .alert-item {
+            display: flex;
+            gap: 11px;
+            padding: 11px;
+            border-radius: 9px;
+            margin-bottom: 9px;
+        }
+
+        .alert-item:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .alert-item.a-danger {
+            background: #FEF2F2;
+        }
+
+        .alert-item.a-warning {
+            background: #FFFBEB;
+        }
+
+        .a-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .a-icon.ai-danger {
+            background: #FEE2E2;
+        }
+
+        .a-icon.ai-danger i {
+            color: #EF4444;
+            font-size: 13px;
+        }
+
+        .a-icon.ai-warning {
+            background: #FEF3C7;
+        }
+
+        .a-icon.ai-warning i {
+            color: #F59E0B;
+            font-size: 13px;
+        }
+
+        .a-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .a-text {
+            font-size: 12px;
+            color: #1E293B;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .a-sub {
+            font-size: 11px;
+            color: #64748B;
+            margin-top: 2px;
+        }
+
+        .a-time {
+            font-size: 10.5px;
+            color: #94A3B8;
+            flex-shrink: 0;
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+        /* ===== SPA VIEWS & GENERIC CARDS ===== */
+        .view-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .generic-header {
+            margin-bottom: 24px;
+        }
+
+        .generic-header h2 {
+            font-size: 20px;
+            color: #1E293B;
+            font-weight: 700;
+        }
+
+        .generic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .generic-card {
+            background: #FFFFFF;
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gc-title {
+            font-size: 12.5px;
+            color: #64748B;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .gc-val {
+            font-size: 26px;
+            font-weight: 700;
+            color: #1E293B;
+            margin-bottom: 6px;
+        }
+
+        .gc-sub {
+            font-size: 12px;
+            color: #94A3B8;
+        }
+
+        .gc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+        }
+
+        .gc-list li {
+            font-size: 13px;
+            color: #334155;
+            padding: 8px 0;
+            border-bottom: 1px dashed #E2E8F0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .gc-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1440px) {
+            .kpi-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
+
+            .row-a,
+            .row-b,
+            .row-c {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .sidebar {
+                width: 64px;
+                min-width: 64px;
+            }
+
+            .sidebar .logo-text,
+            .sidebar .nav-item span,
+            .sidebar .footer-text {
+                display: none;
+            }
+
+            .sidebar-logo {
+                justify-content: center;
+                padding: 16px 0;
+            }
+
+            .sidebar-footer {
+                justify-content: center;
+                padding: 14px 0;
+            }
+
+            .nav-item {
+                justify-content: center;
+                padding: 12px 0;
+            }
+
+            .nav-item i {
+                margin-left: -3px;
+            }
+
+            .row-a,
+            .row-b,
+            .row-c {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .topbar {
+                padding: 12px 16px;
+            }
+
+            .content {
+                padding: 14px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .kpi-row {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .sdm-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .topbar-right .filter-btn:first-child {
+                display: none;
+            }
+
+            .export-btn span {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- ========== SIDEBAR ========== -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon"><i class="fa-solid fa-plus"></i></div>
+                <div class="logo-text">
+                    <div class="name">RS MADINA</div>
+                    <div class="sub">BUKITTINGGI</div>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <div class="nav-item active" data-target="view-dashboard"><i class="fa-solid fa-gauge-high"></i><span>Dashboard Utama</span></div>
+                <div class="nav-item" data-target="view-pelayanan"><i class="fa-solid fa-stethoscope"></i><span>Pelayanan</span></div>
+                <div class="nav-item" data-target="view-keuangan"><i class="fa-solid fa-wallet"></i><span>Keuangan</span></div>
+                <div class="nav-item" data-target="view-sdm"><i class="fa-solid fa-users"></i><span>SDM</span></div>
+                <div class="nav-item" data-target="view-mutu"><i class="fa-solid fa-shield-halved"></i><span>Mutu &amp; Keselamatan</span></div>
+                <div class="nav-item" data-target="view-farmasi"><i class="fa-solid fa-pills"></i><span>Farmasi &amp; Logistik</span></div>
+                <div class="nav-item" data-target="view-ipsrs"><i class="fa-solid fa-screwdriver-wrench"></i><span>IPSRS &amp; Sarpras</span></div>
+                <div class="nav-item" data-target="view-komplain"><i class="fa-solid fa-comment-dots"></i><span>Komplain</span></div>
+                <div class="nav-item" data-target="view-laporan"><i class="fa-solid fa-file-lines"></i><span>Laporan Direksi</span></div>
+                <div class="nav-item" data-target="view-analytics"><i class="fa-solid fa-chart-line"></i><span>Analytics &amp; Trend</span></div>
+                <div class="nav-item" data-target="view-risiko"><i class="fa-solid fa-triangle-exclamation"></i><span>Risiko Rumah Sakit</span></div>
+                <div class="nav-item" data-target="view-pengaturan"><i class="fa-solid fa-gear"></i><span>Pengaturan</span></div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <i class="fa-solid fa-rotate refresh-icon"></i>
+                <div class="footer-text">
+                    <span class="ft-title">Update Terakhir</span>
+                    12 Mei 2026 10:30 WIB<br>
+                    Data real time dari sistem<br>informasi rumah sakit
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== MAIN ========== -->
+        <main class="main">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <div class="tb-title">DASHBOARD DIREKSI</div>
+                    <div class="tb-sub">Selamat datang, Direksi</div>
+                </div>
+                <div class="topbar-right">
+                    <button class="filter-btn">
+                        <i class="fa-regular fa-calendar"></i>
+                        April 2026
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <button class="filter-btn">
+                        Filter Unit
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="notif-wrap">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="notif-badge">5</span>
+                    </div>
+                    <div class="user-chip">
+                        <div class="user-avatar">D</div>
+                        <div>
+                            <div class="user-name">Direksi</div>
+                            <div class="user-status">Online</div>
+                        </div>
+                    </div>
+                    <button class="export-btn">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Export Laporan</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- SCROLLABLE CONTENT -->
+            <div class="content">
+
+                <!-- ===== VIEW: DASHBOARD UTAMA ===== -->
+                <div id="view-dashboard" class="view-section active">
+
+                <!-- ===== KPI CARDS ===== -->
+                <div class="kpi-row">
+
+                    <!-- BOR -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">BOR (Hari Ini)</div>
+                            <div class="kpi-icon c-green"><i class="fa-solid fa-bed-pulse"></i></div>
+                        </div>
+                        <div class="kpi-val">88%</div>
+                        <div class="kpi-badge up"><i class="fa-solid fa-arrow-up" style="font-size:8px;"></i> 6% dari
+                            bulan lalu</div>
+                    </div>
+
+                    <!-- Pasien -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">Pasien Hari Ini</div>
+                            <div class="kpi-icon c-blue"><i class="fa-solid fa-user-group"></i></div>
+                        </div>
+                        <div class="kpi-val">325</div>
+                        <div class="kpi-badge up"><i class="fa-solid fa-arrow-up" style="font-size:8px;"></i> 8% dari
+                            kemarin</div>
+                    </div>
+
+                    <!-- Pendapatan -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">Pendapatan Hari Ini</div>
+                            <div class="kpi-icon c-purple"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                        </div>
+                        <div class="kpi-val v-purple">Rp 286.450.000</div>
+                        <div class="kpi-badge up"><i class="fa-solid fa-arrow-up" style="font-size:8px;"></i> 5,6% dari
+                            kemarin</div>
+                    </div>
+
+                    <!-- Komplain -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">Komplain Aktif</div>
+                            <div class="kpi-icon c-orange"><i class="fa-solid fa-comment-dots"></i></div>
+                        </div>
+                        <div class="kpi-val">18</div>
+                        <div class="kpi-badge down"><i class="fa-solid fa-arrow-down" style="font-size:8px;"></i> 10%
+                            dari bulan lalu</div>
+                    </div>
+
+                    <!-- Cashflow -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">Cashflow (Bulan Ini)</div>
+                            <div class="kpi-icon c-red"><i class="fa-solid fa-coins"></i></div>
+                        </div>
+                        <div class="kpi-val v-red">Rp 128.750.000</div>
+                        <div class="kpi-badge warning"><i class="fa-solid fa-triangle-exclamation"
+                                style="font-size:8px;"></i> Perhatian</div>
+                    </div>
+
+                    <!-- TT Tersedia -->
+                    <div class="kpi-card">
+                        <div class="kpi-top">
+                            <div class="kpi-label">TT Tersedia</div>
+                            <div class="kpi-icon c-teal"><i class="fa-solid fa-calendar-check"></i></div>
+                        </div>
+                        <div class="kpi-val">24</div>
+                        <div class="kpi-sub">dari 120 TT</div>
+                    </div>
+
+                </div><!-- /kpi-row -->
+
+
+                <!-- ===== ROW A: BOR Trend | Kunjungan Pasien | Pendapatan ===== -->
+                <div class="row row-a">
+
+                    <!-- BOR TREND -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">TREND BOR 6 BULAN TERAKHIR</div>
+                        </div>
+                        <div class="bor-wrap">
+                            <canvas id="borChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- KUNJUNGAN PASIEN -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">KUNJUNGAN PASIEN</div>
+                            <select class="sel">
+                                <option>Periode: Bulan Ini</option>
+                            </select>
+                        </div>
+
+                        <div class="visit-item">
+                            <div class="vi-left">
+                                <div class="vi-icon bg-green"><i class="fa-solid fa-user-injured"></i></div>
+                                <span class="vi-name">Rawat Jalan</span>
+                            </div>
+                            <div class="vi-right">
+                                <svg class="vi-sparkline" viewBox="0 0 72 28" fill="none">
+                                    <polyline stroke="#10B981" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" points="0,22 12,18 24,14 36,11 48,9 60,7 72,4" />
+                                </svg>
+                                <span class="vi-val">6.245</span>
+                                <span class="vi-chg"><i class="fa-solid fa-arrow-up"></i>7%</span>
+                            </div>
+                        </div>
+
+                        <div class="visit-item">
+                            <div class="vi-left">
+                                <div class="vi-icon bg-red"><i class="fa-solid fa-truck-medical"></i></div>
+                                <span class="vi-name">IGD</span>
+                            </div>
+                            <div class="vi-right">
+                                <svg class="vi-sparkline" viewBox="0 0 72 28" fill="none">
+                                    <polyline stroke="#EF4444" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" points="0,20 12,22 24,16 36,19 48,14 60,17 72,12" />
+                                </svg>
+                                <span class="vi-val">612</span>
+                                <span class="vi-chg"><i class="fa-solid fa-arrow-up"></i>6%</span>
+                            </div>
+                        </div>
+
+                        <div class="visit-item">
+                            <div class="vi-left">
+                                <div class="vi-icon bg-purple"><i class="fa-solid fa-bed"></i></div>
+                                <span class="vi-name">Rawat Inap</span>
+                            </div>
+                            <div class="vi-right">
+                                <svg class="vi-sparkline" viewBox="0 0 72 28" fill="none">
+                                    <polyline stroke="#8B5CF6" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" points="0,24 12,21 24,19 36,17 48,14 60,11 72,8" />
+                                </svg>
+                                <span class="vi-val">1.102</span>
+                                <span class="vi-chg"><i class="fa-solid fa-arrow-up"></i>9%</span>
+                            </div>
+                        </div>
+
+                        <div class="visit-item">
+                            <div class="vi-left">
+                                <div class="vi-icon bg-blue"><i class="fa-solid fa-microscope"></i></div>
+                                <span class="vi-name">Penunjang</span>
+                            </div>
+                            <div class="vi-right">
+                                <svg class="vi-sparkline" viewBox="0 0 72 28" fill="none">
+                                    <polyline stroke="#3B82F6" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" points="0,20 12,17 24,22 36,15 48,18 60,13 72,11" />
+                                </svg>
+                                <span class="vi-val">2.153</span>
+                                <span class="vi-chg"><i class="fa-solid fa-arrow-up"></i>5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PENDAPATAN DONUT -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">PENDAPATAN (BULAN INI)</div>
+                        </div>
+                        <div class="pend-wrap">
+                            <div class="pend-donut">
+                                <canvas id="pendChart" width="140" height="140"></canvas>
+                                <div class="pend-center">
+                                    <div class="pc-label">Total</div>
+                                    <div class="pc-val">Rp 8,72 M</div>
+                                </div>
+                            </div>
+                            <div class="leg-list">
+                                <div class="leg-item">
+                                    <div class="leg-left">
+                                        <div class="leg-dot" style="background:#10B981;"></div><span
+                                            class="leg-name">Rawat Inap</span>
+                                    </div>
+                                    <span class="leg-val">Rp 3,25 M (37%)</span>
+                                </div>
+                                <div class="leg-item">
+                                    <div class="leg-left">
+                                        <div class="leg-dot" style="background:#3B82F6;"></div><span
+                                            class="leg-name">Rawat Jalan</span>
+                                    </div>
+                                    <span class="leg-val">Rp 2,45 M (28%)</span>
+                                </div>
+                                <div class="leg-item">
+                                    <div class="leg-left">
+                                        <div class="leg-dot" style="background:#F59E0B;"></div><span
+                                            class="leg-name">Farmasi</span>
+                                    </div>
+                                    <span class="leg-val">Rp 1,68 M (19%)</span>
+                                </div>
+                                <div class="leg-item">
+                                    <div class="leg-left">
+                                        <div class="leg-dot" style="background:#8B5CF6;"></div><span
+                                            class="leg-name">Penunjang</span>
+                                    </div>
+                                    <span class="leg-val">Rp 0,89 M (10%)</span>
+                                </div>
+                                <div class="leg-item">
+                                    <div class="leg-left">
+                                        <div class="leg-dot" style="background:#EF4444;"></div><span
+                                            class="leg-name">IGD</span>
+                                    </div>
+                                    <span class="leg-val">Rp 0,45 M (5%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-note">
+                            <i class="fa-solid fa-arrow-up" style="font-size:10px;"></i>
+                            5,4% dibanding bulan lalu
+                        </div>
+                    </div>
+
+                </div><!-- /row-a -->
+
+
+                <!-- ===== ROW B: Top 5 | Ringkasan Keuangan | Komplain ===== -->
+                <div class="row row-b">
+
+                    <!-- TOP 5 UNIT PENDAPATAN -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">TOP 5 UNIT PENDAPATAN</div>
+                            <select class="sel">
+                                <option>Bulan Ini</option>
+                            </select>
+                        </div>
+
+                        <div class="bar-item">
+                            <span class="bar-lbl">Rawat Inap</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:100%;background:#10B981;"></div>
+                            </div>
+                            <span class="bar-amt">Rp 3,25 M</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-lbl">Rawat Jalan</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:75%;background:#3B82F6;"></div>
+                            </div>
+                            <span class="bar-amt">Rp 2,45 M</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-lbl">Farmasi</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:52%;background:#F59E0B;"></div>
+                            </div>
+                            <span class="bar-amt">Rp 1,68 M</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-lbl">Penunjang</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:27%;background:#8B5CF6;"></div>
+                            </div>
+                            <span class="bar-amt">Rp 0,89 M</span>
+                        </div>
+                        <div class="bar-item">
+                            <span class="bar-lbl">IGD</span>
+                            <div class="bar-track">
+                                <div class="bar-fill" style="width:14%;background:#EF4444;"></div>
+                            </div>
+                            <span class="bar-amt">Rp 0,45 M</span>
+                        </div>
+
+                        <div class="bar-footer">
+                            <span class="bar-footer-lbl">Total Pendapatan</span>
+                            <span class="bar-footer-val">Rp 8,72 M</span>
+                        </div>
+                    </div>
+
+                    <!-- RINGKASAN KEUANGAN -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">RINGKASAN KEUANGAN (BULAN INI)</div>
+                        </div>
+                        <div class="fin-grid">
+                            <div class="fin-item">
+                                <div class="fin-lbl">Pendapatan</div>
+                                <div class="fin-val">Rp 8,72 M</div>
+                                <div class="fin-chg"><i class="fa-solid fa-arrow-up"></i> 5,4%</div>
+                            </div>
+                            <div class="fin-item">
+                                <div class="fin-lbl">Beban Operasional</div>
+                                <div class="fin-val">Rp 7,43 M</div>
+                                <div class="fin-chg"><i class="fa-solid fa-arrow-up"></i> 4,8%</div>
+                            </div>
+                            <div class="fin-item">
+                                <div class="fin-lbl">Laba Operasional</div>
+                                <div class="fin-val">Rp 1,29 M</div>
+                                <div class="fin-chg"><i class="fa-solid fa-arrow-up"></i> 8,7%</div>
+                            </div>
+                        </div>
+                        <div class="cf-section">
+                            <div class="cf-lbl">Cashflow</div>
+                            <div class="cf-val">Rp 128.750.000</div>
+                            <div class="cf-chart-wrap">
+                                <canvas id="cfChart"></canvas>
+                            </div>
+                            <div class="cf-warn">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Perhatian
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- KOMPLAIN PASIEN -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">KOMPLAIN PASIEN (BULAN INI)</div>
+                            <select class="sel">
+                                <option>Semua Unit</option>
+                            </select>
+                        </div>
+                        <div class="kom-wrap">
+                            <div class="kom-donut">
+                                <canvas id="komChart" width="120" height="120"></canvas>
+                                <div class="kom-center">
+                                    <div class="kc-lbl">Total</div>
+                                    <div class="kc-val">45</div>
+                                </div>
+                            </div>
+                            <div class="kom-leg">
+                                <div class="kom-item">
+                                    <div class="kom-left">
+                                        <div class="kom-dot" style="background:#EF4444;"></div><span
+                                            class="kom-name">Waktu Tunggu</span>
+                                    </div>
+                                    <span class="kom-val">18 (40%)</span>
+                                </div>
+                                <div class="kom-item">
+                                    <div class="kom-left">
+                                        <div class="kom-dot" style="background:#F59E0B;"></div><span
+                                            class="kom-name">Pelayanan Petugas</span>
+                                    </div>
+                                    <span class="kom-val">12 (27%)</span>
+                                </div>
+                                <div class="kom-item">
+                                    <div class="kom-left">
+                                        <div class="kom-dot" style="background:#3B82F6;"></div><span
+                                            class="kom-name">Informasi</span>
+                                    </div>
+                                    <span class="kom-val">7 (16%)</span>
+                                </div>
+                                <div class="kom-item">
+                                    <div class="kom-left">
+                                        <div class="kom-dot" style="background:#10B981;"></div><span
+                                            class="kom-name">Fasilitas</span>
+                                    </div>
+                                    <span class="kom-val">5 (11%)</span>
+                                </div>
+                                <div class="kom-item">
+                                    <div class="kom-left">
+                                        <div class="kom-dot" style="background:#CBD5E1;"></div><span
+                                            class="kom-name">Lainnya</span>
+                                    </div>
+                                    <span class="kom-val">3 (6%)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="detail-link">Lihat Detail Komplain <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div><!-- /row-b -->
+
+
+                <!-- ===== ROW C: Kehadiran SDM | Bed Availability | Alert ===== -->
+                <div class="row row-c">
+
+                    <!-- KEHADIRAN SDM -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">KEHADIRAN SDM (HARI INI)</div>
+                        </div>
+                        <div class="sdm-grid">
+                            <div class="sdm-box s-total">
+                                <div class="sdm-lbl">Total SDM</div>
+                                <div class="sdm-val sv-dark">312</div>
+                                <div class="sdm-pct">&nbsp;</div>
+                            </div>
+                            <div class="sdm-box s-hadir">
+                                <div class="sdm-lbl">Hadir</div>
+                                <div class="sdm-val sv-green">283</div>
+                                <div class="sdm-pct">90,7%</div>
+                            </div>
+                            <div class="sdm-box s-lambat">
+                                <div class="sdm-lbl">Terlambat</div>
+                                <div class="sdm-val sv-orange">21</div>
+                                <div class="sdm-pct">6,7%</div>
+                            </div>
+                            <div class="sdm-box s-absen">
+                                <div class="sdm-lbl">Tidak Hadir</div>
+                                <div class="sdm-val sv-red">8</div>
+                                <div class="sdm-pct">2,6%</div>
+                            </div>
+                        </div>
+                        <a class="detail-link">Lihat Detail Kehadiran <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- BED AVAILABILITY -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">BED AVAILABILITY (HARI INI)</div>
+                        </div>
+                        <div class="bed-content">
+                            <div class="bed-gauge-wrap">
+                                <canvas id="bedChart" width="140" height="90" class="bed-gauge-canvas"></canvas>
+                                <div class="bed-center">
+                                    <div class="bc-num">24</div>
+                                    <div class="bc-lbl">TT Tersedia</div>
+                                </div>
+                            </div>
+                            <div class="bed-stats">
+                                <div class="bs-row">
+                                    <span class="bs-lbl">Total TT</span>
+                                    <span class="bs-val">120</span>
+                                </div>
+                                <div class="bs-row">
+                                    <span class="bs-lbl">Terisi</span>
+                                    <span class="bs-val">96 <span class="bs-pct">(80%)</span></span>
+                                </div>
+                                <div class="bs-row">
+                                    <span class="bs-lbl">Kosong</span>
+                                    <span class="bs-val">24 <span class="bs-pct">(20%)</span></span>
+                                </div>
+                                <div class="bs-row">
+                                    <span class="bs-lbl">Isolasi</span>
+                                    <span class="bs-val">6</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ALERT & PERINGATAN -->
+                    <div class="card">
+                        <div class="card-head">
+                            <div class="card-title">ALERT &amp; PERINGATAN</div>
+                        </div>
+
+                        <div class="alert-item a-danger">
+                            <div class="a-icon ai-danger"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="a-body">
+                                <div class="a-text">Stok obat Paracetamol 500mg hampir habis</div>
+                                <div class="a-sub">Unit Farmasi</div>
+                            </div>
+                            <span class="a-time">10 menit lalu</span>
+                        </div>
+
+                        <div class="alert-item a-warning">
+                            <div class="a-icon ai-warning"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                            <div class="a-body">
+                                <div class="a-text">BOR di atas 85% selama 3 hari berturut-turut</div>
+                                <div class="a-sub">Manajemen Bed</div>
+                            </div>
+                            <span class="a-time">30 menit lalu</span>
+                        </div>
+
+                        <div class="alert-item a-warning">
+                            <div class="a-icon ai-warning"><i class="fa-solid fa-wrench"></i></div>
+                            <div class="a-body">
+                                <div class="a-text">3 Alat medis perlu maintenance</div>
+                                <div class="a-sub">IPSRS</div>
+                            </div>
+                            <span class="a-time">1 jam lalu</span>
+                        </div>
+
+                        <a class="detail-link">Lihat Semua Peringatan <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                </div><!-- /row-c -->
+
+                </div><!-- /view-dashboard -->
+
+                <!-- ===== OTHER VIEWS ===== -->
+                <div id="view-pelayanan" class="view-section"></div>
+                <div id="view-keuangan" class="view-section"></div>
+                <div id="view-sdm" class="view-section"></div>
+                <div id="view-mutu" class="view-section"></div>
+                <div id="view-farmasi" class="view-section"><div class="generic-header"><h2>Farmasi & Logistik</h2><p style="color:#64748B;">Modul sedang dalam pengembangan.</p></div></div>
+                <div id="view-ipsrs" class="view-section"></div>
+                <div id="view-komplain" class="view-section"></div>
+                <div id="view-laporan" class="view-section"></div>
+                <div id="view-analytics" class="view-section"></div>
+                <div id="view-risiko" class="view-section"></div>
+                <div id="view-pengaturan" class="view-section"><div class="generic-header"><h2>Pengaturan Sistem</h2><p style="color:#64748B;">Modul sedang dalam pengembangan.</p></div></div>
+
+            </div><!-- /content -->
+        </main>
+    </div><!-- /app -->
+
+    <script>
+        const formatRupiah = (angka) => {
+            let rp = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+            return rp;
+        };
+        const formatMiliar = (angka) => {
+            return 'Rp ' + (angka / 1000000000).toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' M';
+        };
+
+        fetch('data.json')
+            .then(res => res.json())
+            .then(data => {
+                // Update KPI Row
+                const kpiVals = document.querySelectorAll('.kpi-val');
+                const kpiBadges = document.querySelectorAll('.kpi-badge');
+                
+                kpiVals[0].textContent = data.pelayanan.bor.value + '%';
+                kpiBadges[0].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.bor.status}" style="font-size:8px;"></i> ${data.pelayanan.bor.trend}% dari bulan lalu`;
+
+                kpiVals[1].textContent = data.pelayanan.kunjunganPasien.hariIni.value;
+                kpiBadges[1].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.kunjunganPasien.hariIni.status}" style="font-size:8px;"></i> ${data.pelayanan.kunjunganPasien.hariIni.trend}% dari kemarin`;
+
+                kpiVals[2].textContent = formatRupiah(data.keuangan.pendapatan.harian);
+                kpiBadges[2].innerHTML = `<i class="fa-solid fa-arrow-${data.keuangan.pendapatan.harianStatus}" style="font-size:8px;"></i> ${data.keuangan.pendapatan.trendHarian}% dari kemarin`;
+
+                kpiVals[3].textContent = data.mutuKeselamatan.komplain.aktif.value;
+                kpiBadges[3].innerHTML = `<i class="fa-solid fa-arrow-${data.mutuKeselamatan.komplain.aktif.status}" style="font-size:8px;"></i> ${data.mutuKeselamatan.komplain.aktif.trend}% dari bulan lalu`;
+
+                kpiVals[4].textContent = formatRupiah(data.keuangan.cashFlow.bulanan);
+                
+                kpiVals[5].textContent = data.pelayanan.bedAvailability.kosong;
+                document.querySelector('.kpi-sub').textContent = `dari ${data.pelayanan.bedAvailability.total} TT`;
+
+                // Update Kunjungan Pasien
+                const viVals = document.querySelectorAll('.vi-val');
+                const viChgs = document.querySelectorAll('.vi-chg');
+                
+                viVals[0].textContent = data.pelayanan.kunjunganPasien.rawatJalan.value.toLocaleString('id-ID');
+                viChgs[0].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.kunjunganPasien.rawatJalan.status}"></i>${data.pelayanan.kunjunganPasien.rawatJalan.trend}%`;
+
+                viVals[1].textContent = data.pelayanan.kunjunganPasien.igd.value.toLocaleString('id-ID');
+                viChgs[1].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.kunjunganPasien.igd.status}"></i>${data.pelayanan.kunjunganPasien.igd.trend}%`;
+
+                viVals[2].textContent = data.pelayanan.kunjunganPasien.rawatInap.value.toLocaleString('id-ID');
+                viChgs[2].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.kunjunganPasien.rawatInap.status}"></i>${data.pelayanan.kunjunganPasien.rawatInap.trend}%`;
+
+                viVals[3].textContent = data.pelayanan.kunjunganPasien.penunjang.value.toLocaleString('id-ID');
+                viChgs[3].innerHTML = `<i class="fa-solid fa-arrow-${data.pelayanan.kunjunganPasien.penunjang.status}"></i>${data.pelayanan.kunjunganPasien.penunjang.trend}%`;
+
+                // Update Pendapatan Donut Center Text and List
+                document.querySelector('.pc-val').textContent = formatMiliar(data.keuangan.pendapatan.bulanan);
+                const legVals = document.querySelectorAll('.leg-val');
+                const pu = data.keuangan.profitUnit;
+                const tot = data.keuangan.pendapatan.bulanan;
+                legVals[0].textContent = `${formatMiliar(pu.rawatInap)} (${Math.round(pu.rawatInap/tot*100)}%)`;
+                legVals[1].textContent = `${formatMiliar(pu.rawatJalan)} (${Math.round(pu.rawatJalan/tot*100)}%)`;
+                legVals[2].textContent = `${formatMiliar(pu.farmasi)} (${Math.round(pu.farmasi/tot*100)}%)`;
+                legVals[3].textContent = `${formatMiliar(pu.penunjang)} (${Math.round(pu.penunjang/tot*100)}%)`;
+                legVals[4].textContent = `${formatMiliar(pu.igd)} (${Math.round(pu.igd/tot*100)}%)`;
+
+                // Update Top 5 Bars
+                const barAmts = document.querySelectorAll('.bar-amt');
+                const barFills = document.querySelectorAll('.bar-fill');
+                barAmts[0].textContent = formatMiliar(pu.rawatInap); barFills[0].style.width = Math.round(pu.rawatInap/pu.rawatInap*100) + '%';
+                barAmts[1].textContent = formatMiliar(pu.rawatJalan); barFills[1].style.width = Math.round(pu.rawatJalan/pu.rawatInap*100) + '%';
+                barAmts[2].textContent = formatMiliar(pu.farmasi); barFills[2].style.width = Math.round(pu.farmasi/pu.rawatInap*100) + '%';
+                barAmts[3].textContent = formatMiliar(pu.penunjang); barFills[3].style.width = Math.round(pu.penunjang/pu.rawatInap*100) + '%';
+                barAmts[4].textContent = formatMiliar(pu.igd); barFills[4].style.width = Math.round(pu.igd/pu.rawatInap*100) + '%';
+                document.querySelector('.bar-footer-val').textContent = formatMiliar(data.keuangan.pendapatan.bulanan);
+
+                // Update Ringkasan Keuangan
+                const finVals = document.querySelectorAll('.fin-val');
+                const finChgs = document.querySelectorAll('.fin-chg');
+                finVals[0].textContent = formatMiliar(data.keuangan.pendapatan.bulanan);
+                finChgs[0].innerHTML = `<i class="fa-solid fa-arrow-${data.keuangan.pendapatan.bulananStatus}"></i> ${data.keuangan.pendapatan.trendBulanan.toString().replace('.', ',')}%`;
+                
+                finVals[1].textContent = formatMiliar(data.keuangan.pengeluaran.bulanan);
+                finChgs[1].innerHTML = `<i class="fa-solid fa-arrow-${data.keuangan.pengeluaran.bulananStatus}"></i> ${data.keuangan.pengeluaran.trendBulanan.toString().replace('.', ',')}%`;
+                
+                finVals[2].textContent = formatMiliar(data.keuangan.labaOperasional.bulanan);
+                finChgs[2].innerHTML = `<i class="fa-solid fa-arrow-${data.keuangan.labaOperasional.bulananStatus}"></i> ${data.keuangan.labaOperasional.trendBulanan.toString().replace('.', ',')}%`;
+                
+                document.querySelector('.cf-val').textContent = formatRupiah(data.keuangan.cashFlow.bulanan);
+
+                // Update Komplain
+                document.querySelector('.kc-val').textContent = data.mutuKeselamatan.komplain.totalBulanan;
+                const komVals = document.querySelectorAll('.kom-val');
+                const kr = data.mutuKeselamatan.komplain.rincian;
+                const tk = data.mutuKeselamatan.komplain.totalBulanan;
+                komVals[0].textContent = `${kr.waktuTunggu} (${Math.round(kr.waktuTunggu/tk*100)}%)`;
+                komVals[1].textContent = `${kr.pelayananPetugas} (${Math.round(kr.pelayananPetugas/tk*100)}%)`;
+                komVals[2].textContent = `${kr.informasi} (${Math.round(kr.informasi/tk*100)}%)`;
+                komVals[3].textContent = `${kr.fasilitas} (${Math.round(kr.fasilitas/tk*100)}%)`;
+                komVals[4].textContent = `${kr.lainnya} (${Math.round(kr.lainnya/tk*100)}%)`;
+
+                // Update SDM
+                const sdmVals = document.querySelectorAll('.sdm-val');
+                const sdmPcts = document.querySelectorAll('.sdm-pct');
+                const sdm = data.sdm.kehadiran;
+                sdmVals[0].textContent = sdm.total;
+                sdmVals[1].textContent = sdm.hadir; sdmPcts[1].textContent = (sdm.hadir/sdm.total*100).toFixed(1).replace('.',',') + '%';
+                sdmVals[2].textContent = sdm.terlambat; sdmPcts[2].textContent = (sdm.terlambat/sdm.total*100).toFixed(1).replace('.',',') + '%';
+                sdmVals[3].textContent = sdm.absen; sdmPcts[3].textContent = (sdm.absen/sdm.total*100).toFixed(1).replace('.',',') + '%';
+
+                // Update Bed Availability
+                const bsVals = document.querySelectorAll('.bs-val');
+                const ba = data.pelayanan.bedAvailability;
+                document.querySelector('.bc-num').textContent = ba.kosong;
+                bsVals[0].textContent = ba.total;
+                bsVals[1].innerHTML = `${ba.terisi} <span class="bs-pct">(${(ba.terisi/ba.total*100).toFixed(0)}%)</span>`;
+                bsVals[2].innerHTML = `${ba.kosong} <span class="bs-pct">(${(ba.kosong/ba.total*100).toFixed(0)}%)</span>`;
+                bsVals[3].textContent = ba.isolasi;
+
+                // Update Alerts
+                const alertCards = document.querySelectorAll('#view-dashboard .row-c .card');
+                const alertCard = alertCards[alertCards.length - 1];
+                
+                const existingAlerts = alertCard.querySelectorAll('.alert-item');
+                existingAlerts.forEach(el => el.remove());
+                const detailLink = alertCard.querySelector('.detail-link');
+                if (detailLink) detailLink.remove();
+
+                data.alerts.forEach(alert => {
+                    const alertHtml = `
+                    <div class="alert-item a-${alert.type}">
+                        <div class="a-icon ai-${alert.type}"><i class="fa-solid ${alert.type === 'danger' ? 'fa-triangle-exclamation' : 'fa-wrench'}"></i></div>
+                        <div class="a-body">
+                            <div class="a-text">${alert.message}</div>
+                            <div class="a-sub">${alert.sub}</div>
+                        </div>
+                        <span class="a-time">${alert.time}</span>
+                    </div>`;
+                    alertCard.insertAdjacentHTML('beforeend', alertHtml);
+                });
+                alertCard.insertAdjacentHTML('beforeend', `<a class="detail-link">Lihat Semua Peringatan <i class="fa-solid fa-arrow-right"></i></a>`);
+
+                // --- GENERIC VIEW RENDERER ---
+                function renderGenericView(viewId, title, items) {
+                    const view = document.getElementById(viewId);
+                    if (!view) return;
+                    
+                    let html = `
+                        <div class="generic-header">
+                            <h2>${title}</h2>
+                        </div>
+                        <div class="generic-grid">
+                    `;
+
+                    items.forEach(item => {
+                        html += `<div class="generic-card">
+                            <div class="gc-title"><i class="fa-solid fa-circle-info" style="color:#3B82F6;"></i> ${item.title}</div>`;
+                        
+                        if (item.type === 'value') {
+                            html += `<div class="gc-val">${item.value}</div>`;
+                            if (item.sub) html += `<div class="gc-sub">${item.sub}</div>`;
+                        } else if (item.type === 'list') {
+                            html += `<ul class="gc-list">`;
+                            item.data.forEach(li => {
+                                html += `<li><span>${li.label}</span> <strong>${li.val}</strong></li>`;
+                            });
+                            html += `</ul>`;
+                        }
+                        
+                        html += `</div>`;
+                    });
+
+                    html += `</div>`;
+                    view.innerHTML = html;
+                }
+
+                // Render other views using data.json
+                renderGenericView('view-pelayanan', 'Data Pelayanan', [
+                    { title: 'BOR', type: 'value', value: data.pelayanan.bor.value + '%', sub: data.pelayanan.bor.trend + '% dari bulan lalu' },
+                    { title: 'LOS', type: 'value', value: data.pelayanan.los.value, sub: data.pelayanan.los.unit },
+                    { title: 'TOI', type: 'value', value: data.pelayanan.toi.value, sub: data.pelayanan.toi.unit },
+                    { title: 'BTO', type: 'value', value: data.pelayanan.bto.value, sub: data.pelayanan.bto.unit },
+                    { title: 'Waiting Time', type: 'value', value: data.pelayanan.waitingTime.value, sub: data.pelayanan.waitingTime.unit },
+                    { title: 'Kepuasan Pasien', type: 'value', value: data.pelayanan.kepuasanPasien.value + '%', sub: '' },
+                    { title: 'Kunjungan Pasien', type: 'list', data: [
+                        { label: 'Rawat Jalan', val: data.pelayanan.kunjunganPasien.rawatJalan.value },
+                        { label: 'IGD', val: data.pelayanan.kunjunganPasien.igd.value },
+                        { label: 'Rawat Inap', val: data.pelayanan.kunjunganPasien.rawatInap.value },
+                        { label: 'Penunjang', val: data.pelayanan.kunjunganPasien.penunjang.value }
+                    ]}
+                ]);
+
+                renderGenericView('view-keuangan', 'Data Keuangan', [
+                    { title: 'Pendapatan Bulanan', type: 'value', value: formatMiliar(data.keuangan.pendapatan.bulanan), sub: data.keuangan.pendapatan.trendBulanan + '% dari bulan lalu' },
+                    { title: 'Pengeluaran', type: 'value', value: formatMiliar(data.keuangan.pengeluaran.bulanan), sub: data.keuangan.pengeluaran.trendBulanan + '% dari bulan lalu' },
+                    { title: 'Laba Operasional', type: 'value', value: formatMiliar(data.keuangan.labaOperasional.bulanan), sub: data.keuangan.labaOperasional.trendBulanan + '% dari bulan lalu' },
+                    { title: 'Cash Flow', type: 'value', value: formatRupiah(data.keuangan.cashFlow.bulanan), sub: data.keuangan.cashFlow.statusText },
+                    { title: 'Profit Unit', type: 'list', data: [
+                        { label: 'Rawat Inap', val: formatMiliar(data.keuangan.profitUnit.rawatInap) },
+                        { label: 'Rawat Jalan', val: formatMiliar(data.keuangan.profitUnit.rawatJalan) },
+                        { label: 'Farmasi', val: formatMiliar(data.keuangan.profitUnit.farmasi) }
+                    ]}
+                ]);
+
+                renderGenericView('view-sdm', 'Data SDM', [
+                    { title: 'Total SDM', type: 'value', value: data.sdm.kehadiran.total, sub: 'Orang' },
+                    { title: 'Kehadiran Hari Ini', type: 'list', data: [
+                        { label: 'Hadir', val: data.sdm.kehadiran.hadir },
+                        { label: 'Terlambat', val: data.sdm.kehadiran.terlambat },
+                        { label: 'Tidak Hadir', val: data.sdm.kehadiran.absen }
+                    ]},
+                    { title: 'Produktivitas', type: 'value', value: data.sdm.produktivitas.value + '%', sub: 'Rata-rata bulan ini' },
+                    { title: 'Turn Over', type: 'value', value: data.sdm.turnOver.value + '%', sub: 'Tahun ini' }
+                ]);
+
+                renderGenericView('view-mutu', 'Mutu & Keselamatan', [
+                    { title: 'Komplain Aktif', type: 'value', value: data.mutuKeselamatan.komplain.aktif.value, sub: 'Sedang ditangani' },
+                    { title: 'Total Komplain Bulanan', type: 'value', value: data.mutuKeselamatan.komplain.totalBulanan, sub: 'Laporan' },
+                    { title: 'Insiden Keselamatan', type: 'value', value: data.mutuKeselamatan.insidenKeselamatan.value, sub: 'Insiden tercatat' },
+                    { title: 'Kepatuhan SOP', type: 'value', value: data.mutuKeselamatan.kepatuhanSOP.value + '%', sub: 'Audit terakhir' },
+                    { title: 'Indikator Mutu', type: 'value', value: data.mutuKeselamatan.indikatorMutu.value + '%', sub: 'Capaian indikator' }
+                ]);
+
+                renderGenericView('view-ipsrs', 'IPSRS & Sarpras', [
+                    { title: 'Maintenance Alat Medis', type: 'value', value: data.ipsrs.maintenanceAlat, sub: 'Alat dalam maintenance' },
+                    { title: 'Jadwal Maintenance', type: 'value', value: data.ipsrs.jadwalMaintenance, sub: 'Jadwal bulan ini' },
+                    { title: 'Tingkat Kerusakan', type: 'value', value: data.ipsrs.tingkatKerusakan + '%', sub: 'Rata-rata kerusakan' },
+                    { title: 'Status Alat', type: 'list', data: [
+                        { label: 'Kondisi Baik', val: data.ipsrs.statusAlat.baik + '%' },
+                        { label: 'Rusak Ringan', val: data.ipsrs.statusAlat.rusakRingan + '%' },
+                        { label: 'Rusak Berat', val: data.ipsrs.statusAlat.rusakBerat + '%' }
+                    ]}
+                ]);
+
+                renderGenericView('view-komplain', 'Manajemen Komplain', [
+                    { title: 'Total Komplain', type: 'value', value: data.mutuKeselamatan.komplain.totalBulanan, sub: 'Bulan ini' },
+                    { title: 'Rincian Komplain', type: 'list', data: [
+                        { label: 'Waktu Tunggu', val: data.mutuKeselamatan.komplain.rincian.waktuTunggu },
+                        { label: 'Pelayanan Petugas', val: data.mutuKeselamatan.komplain.rincian.pelayananPetugas },
+                        { label: 'Informasi', val: data.mutuKeselamatan.komplain.rincian.informasi },
+                        { label: 'Fasilitas', val: data.mutuKeselamatan.komplain.rincian.fasilitas },
+                        { label: 'Lainnya', val: data.mutuKeselamatan.komplain.rincian.lainnya }
+                    ]}
+                ]);
+
+                renderGenericView('view-laporan', 'Laporan Direksi', [
+                    { title: 'Executive Summary', type: 'value', value: '-', sub: data.laporanDireksi.executiveSummary },
+                    { title: 'Capaian Utama', type: 'value', value: '-', sub: data.laporanDireksi.capaianDireksi },
+                    { title: 'Masalah Strategis', type: 'value', value: '-', sub: data.laporanDireksi.masalahStrategis },
+                    { title: 'Tindakan', type: 'value', value: '-', sub: data.laporanDireksi.tindakanDireksi },
+                    { title: 'Kebutuhan Persetujuan', type: 'value', value: '-', sub: data.laporanDireksi.kebutuhanPersetujuan },
+                    { title: 'Target Depan', type: 'value', value: '-', sub: data.laporanDireksi.targetBulanDepan }
+                ]);
+
+                renderGenericView('view-analytics', 'Analytics & Trend', [
+                    { title: 'Analisa Produktivitas', type: 'value', value: '-', sub: data.analyzeTrend.analisaProduktivitas },
+                    { title: 'Trend Kunjungan', type: 'list', data: [
+                        { label: 'Poli Terpadat', val: data.analyzeTrend.trendKunjungan.poliTerpadat },
+                        { label: 'Dokter Teramai', val: data.analyzeTrend.trendKunjungan.dokterPalingRamai },
+                        { label: 'Hari Teramai', val: data.analyzeTrend.trendKunjungan.hariPalingRamai }
+                    ]},
+                    { title: 'Trend Komplain', type: 'list', data: [
+                        { label: 'Jenis Terbanyak', val: data.analyzeTrend.trendKomplain.jenisTerbanyak },
+                        { label: 'Unit Terbanyak', val: data.analyzeTrend.trendKomplain.unitTerbanyak },
+                        { label: 'Waktu Selesai', val: data.analyzeTrend.trendKomplain.waktuPenyelesaian }
+                    ]}
+                ]);
+
+                renderGenericView('view-risiko', 'Risiko Rumah Sakit', [
+                    { title: 'Risiko Pelayanan', type: 'list', data: data.resikoRumahSakit.pelayanan.map(r => ({label: r, val: ''})) },
+                    { title: 'Risiko SDM', type: 'list', data: data.resikoRumahSakit.sdm.map(r => ({label: r, val: ''})) },
+                    { title: 'Risiko Mutu & Legal', type: 'list', data: data.resikoRumahSakit.mutuLegal.map(r => ({label: r, val: ''})) },
+                    { title: 'Risiko Reputasi', type: 'list', data: data.resikoRumahSakit.reputasi.map(r => ({label: r, val: ''})) }
+                ]);
+
+                // --- SPA NAVIGATION LOGIC ---
+                const navItems = document.querySelectorAll('.nav-item');
+                const viewSections = document.querySelectorAll('.view-section');
+
+                navItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        navItems.forEach(n => n.classList.remove('active'));
+                        viewSections.forEach(v => v.classList.remove('active'));
+                        
+                        item.classList.add('active');
+                        const targetId = item.getAttribute('data-target');
+                        if (targetId) {
+                            const targetView = document.getElementById(targetId);
+                            if (targetView) targetView.classList.add('active');
+                        }
+                    });
+                });
+
+                // Initialize Charts with fetched data
+                initCharts(data);
+            });
+
+        function initCharts(data) {
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+
+            /* ---- BOR TREND LINE CHART ---- */
+            const borCtx = document.getElementById('borChart');
+            borCtx.style.display = 'block';
+            const gradient = borCtx.getContext('2d').createLinearGradient(0, 0, 0, 185);
+            gradient.addColorStop(0, 'rgba(16,185,129,0.18)');
+            gradient.addColorStop(1, 'rgba(16,185,129,0)');
+            new Chart(borCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Nov 2025', 'Des 2025', 'Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026'],
+                    datasets: [{
+                        data: data.analyzeTrend.trendBor.bulanan,
+                        borderColor: '#10B981',
+                        backgroundColor: gradient,
+                        borderWidth: 2.5,
+                        pointBackgroundColor: '#10B981',
+                        pointBorderColor: '#FFFFFF',
+                        pointBorderWidth: 2,
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }, tooltip: {
+                            callbacks: { label: ctx => ' ' + ctx.raw + '%' }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { font: { size: 10 }, color: '#94A3B8' }
+                        },
+                        y: {
+                            min: 0, max: 100,
+                            ticks: {
+                                font: { size: 10 }, color: '#94A3B8',
+                                stepSize: 25,
+                                callback: v => v + '%'
+                            },
+                            grid: { color: '#F1F5F9' }
+                        }
+                    }
+                }
+            });
+
+            /* ---- PENDAPATAN DOUGHNUT ---- */
+            const pendCtx = document.getElementById('pendChart');
+            new Chart(pendCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Rawat Inap', 'Rawat Jalan', 'Farmasi', 'Penunjang', 'IGD'],
+                    datasets: [{
+                        data: [
+                            data.keuangan.profitUnit.rawatInap / 1000000000,
+                            data.keuangan.profitUnit.rawatJalan / 1000000000,
+                            data.keuangan.profitUnit.farmasi / 1000000000,
+                            data.keuangan.profitUnit.penunjang / 1000000000,
+                            data.keuangan.profitUnit.igd / 1000000000
+                        ],
+                        backgroundColor: ['#10B981', '#3B82F6', '#F59E0B', '#8B5CF6', '#EF4444'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2.5,
+                        hoverOffset: 5
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    cutout: '68%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ' ' + ctx.label + ': Rp ' + ctx.raw.toFixed(2).replace('.',',') + ' M'
+                            }
+                        }
+                    }
+                }
+            });
+
+            /* ---- CASHFLOW SPARKLINE ---- */
+            const cfCtx = document.getElementById('cfChart');
+            new Chart(cfCtx, {
+                type: 'line',
+                data: {
+                    labels: ['', '', '', '', '', '', '', ''],
+                    datasets: [{
+                        data: data.keuangan.cashFlow.history,
+                        borderColor: '#F59E0B',
+                        backgroundColor: 'rgba(245,158,11,0.10)',
+                        borderWidth: 2,
+                        pointRadius: 0,
+                        fill: true,
+                        tension: 0.45
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+
+            /* ---- KOMPLAIN DOUGHNUT ---- */
+            const komCtx = document.getElementById('komChart');
+            new Chart(komCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Waktu Tunggu', 'Pelayanan Petugas', 'Informasi', 'Fasilitas', 'Lainnya'],
+                    datasets: [{
+                        data: [
+                            data.mutuKeselamatan.komplain.rincian.waktuTunggu,
+                            data.mutuKeselamatan.komplain.rincian.pelayananPetugas,
+                            data.mutuKeselamatan.komplain.rincian.informasi,
+                            data.mutuKeselamatan.komplain.rincian.fasilitas,
+                            data.mutuKeselamatan.komplain.rincian.lainnya
+                        ],
+                        backgroundColor: ['#EF4444', '#F59E0B', '#3B82F6', '#10B981', '#CBD5E1'],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2.5,
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    cutout: '68%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: ctx => ' ' + ctx.label + ': ' + ctx.raw
+                            }
+                        }
+                    }
+                }
+            });
+
+            /* ---- BED AVAILABILITY GAUGE ---- */
+            const bedCtx = document.getElementById('bedChart');
+            new Chart(bedCtx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [
+                            (data.pelayanan.bedAvailability.terisi / data.pelayanan.bedAvailability.total) * 100,
+                            (data.pelayanan.bedAvailability.kosong / data.pelayanan.bedAvailability.total) * 100
+                        ],
+                        backgroundColor: ['#10B981', '#E2E8F0'],
+                        borderColor: ['#10B981', '#E2E8F0'],
+                        borderWidth: 0,
+                        hoverOffset: 0
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    circumference: 180,
+                    rotation: -90,
+                    cutout: '72%',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    },
+                    animation: { animateRotate: true, duration: 1000 }
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
