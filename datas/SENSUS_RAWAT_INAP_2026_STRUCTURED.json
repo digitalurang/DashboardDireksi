@@ -1,0 +1,3855 @@
+{
+  "metadata": {
+    "source_file": "SENSUS RAWAT INAP 2026.xls",
+    "total_sheets": 20,
+    "sheet_names": [
+      "Jml pasien,hr,rwt & md",
+      "Los",
+      "Bor ",
+      "GDR",
+      "NDR",
+      "BTO",
+      "TOI",
+      "Prop",
+      "UMUR",
+      "Penyakit",
+      "KAMAR RAWTAN",
+      "JML HARI RWTN",
+      "JML pasien  - dokter",
+      "PEMBIAYAAN",
+      "BPJS SAJA",
+      "BESAR PENYAKIT R.INAP (SIRS)",
+      "RAWAT INAP (SIRS)",
+      "LAPORAN AKHIR TAHUN",
+      "COVER 1",
+      "COVER "
+    ]
+  },
+  "sheets": {
+    "Jml pasien,hr,rwt & md": {
+      "sheet_name": "Jml pasien,hr,rwt & md",
+      "title_detected": "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia",
+      "dimensions": {
+        "rows": 28,
+        "columns": 36
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "column_2",
+          "column_3",
+          "column_4",
+          "column_5",
+          "column_6",
+          "column_7",
+          "column_8",
+          "column_9",
+          "column_10",
+          "column_11",
+          "column_12",
+          "column_13",
+          "column_14",
+          "LAMA",
+          "BARU",
+          "JLH",
+          "L",
+          "P",
+          "JLH",
+          "L",
+          "P",
+          "JLH",
+          "L",
+          "P",
+          "JLH",
+          "column_27",
+          "BULAN",
+          "APS",
+          "DIRUJUK",
+          "MENINGGAL",
+          "SEMBUH",
+          "TOTAL"
+        ],
+        "rows": [
+          {
+            "column_1": "Januari",
+            "column_2": "403",
+            "column_3": "Orang",
+            "column_4": "1636",
+            "column_5": "Hari",
+            "column_6": "4",
+            "column_7": "3",
+            "column_8": "7",
+            "column_9": "Orang",
+            "column_10": "0",
+            "column_11": "0",
+            "column_12": "0",
+            "column_13": "1",
+            "column_14": "6",
+            "LAMA": "215",
+            "BARU": "188",
+            "JLH": "13",
+            "L": "5",
+            "P": "8",
+            "column_27": "403",
+            "BULAN": "Januari"
+          },
+          {
+            "column_1": "Februari",
+            "column_2": "363",
+            "column_3": "Orang",
+            "column_4": "1461",
+            "column_5": "Hari",
+            "column_6": "4",
+            "column_7": "0",
+            "column_8": "4",
+            "column_9": "Orang",
+            "column_10": "0",
+            "column_11": "0",
+            "column_12": "0",
+            "column_13": "0",
+            "column_14": "4",
+            "LAMA": "199",
+            "BARU": "164",
+            "JLH": "8",
+            "L": "6",
+            "P": "2",
+            "column_27": "363",
+            "BULAN": "Februari"
+          },
+          {
+            "column_1": "Maret",
+            "column_2": "349",
+            "column_3": "Orang",
+            "column_4": "1386",
+            "column_5": "Hari",
+            "column_6": "2",
+            "column_7": "2",
+            "column_8": "4",
+            "column_9": "Orang",
+            "column_10": "0",
+            "column_11": "0",
+            "column_12": "0",
+            "column_13": "0",
+            "column_14": "4",
+            "LAMA": "182",
+            "BARU": "167",
+            "JLH": "8",
+            "L": "6",
+            "P": "2",
+            "column_27": "349",
+            "BULAN": "Maret"
+          },
+          {
+            "column_1": "April",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "April"
+          },
+          {
+            "column_1": "Mei",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Mei"
+          },
+          {
+            "column_1": "Juni",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Juni"
+          },
+          {
+            "column_1": "Juli",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Juli"
+          },
+          {
+            "column_1": "Agustus",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Agustus"
+          },
+          {
+            "column_1": "September",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "September"
+          },
+          {
+            "column_1": "Oktober",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Oktober"
+          },
+          {
+            "column_1": "November",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "November"
+          },
+          {
+            "column_1": "Desember",
+            "column_3": "Orang",
+            "column_5": "Hari",
+            "column_8": "0",
+            "column_9": "Orang",
+            "JLH": "0",
+            "column_27": "0",
+            "BULAN": "Desember"
+          },
+          {
+            "LAMA": "TOTAL",
+            "column_27": "1115"
+          },
+          {
+            "column_1": "JUMLAH",
+            "column_2": "1115",
+            "column_3": "Orang",
+            "column_4": "4483",
+            "column_5": "Hari",
+            "column_6": "10",
+            "column_7": "5",
+            "column_8": "15",
+            "column_9": "Orang",
+            "column_10": "0",
+            "column_11": "0",
+            "column_12": "0",
+            "column_13": "1",
+            "column_14": "14"
+          },
+          {
+            "column_1": "Sumber : Unit  Rekam Medis  RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "Los": {
+      "sheet_name": "Los",
+      "title_detected": "( Length Of Stay ) /  Rata - rata lama hari rawatan per  pasien",
+      "dimensions": {
+        "rows": 34,
+        "columns": 10
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "1234",
+          "Hari",
+          "403",
+          "Orang",
+          "3.062034739454094",
+          "Hari",
+          "3.024056651530204"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "1234": "1101",
+            "Hari": "Hari",
+            "403": "363",
+            "Orang": "Orang",
+            "3.062034739454094": 3.0330578512396693
+          },
+          {
+            "Januari": "Maret",
+            "1234": "1039",
+            "Hari": "Hari",
+            "403": "349",
+            "Orang": "Orang",
+            "3.062034739454094": 2.977077363896848
+          },
+          {
+            "Januari": "April",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Mei",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Juni",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Juli",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Agustus",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "September",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Oktober",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "November",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "Januari": "Desember",
+            "Hari": "Hari",
+            "Orang": "Orang"
+          },
+          {
+            "1234": "3374",
+            "403": "1115"
+          },
+          {
+            "Januari": "2026"
+          },
+          {
+            "Januari": "2026",
+            "3.062034739454094": "Hari Rawatan Per Pasien"
+          },
+          {
+            "Januari": "Sumber : Unit  Rekam Medis  RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "Bor ": {
+      "sheet_name": "Bor ",
+      "title_detected": "( Bed Occupancy Rate ) / Pemakaian Tempat Tidur",
+      "dimensions": {
+        "rows": 34,
+        "columns": 19
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "1636",
+          "Hari",
+          "56",
+          "x",
+          "bed",
+          "31",
+          "=",
+          "1636",
+          "/",
+          "1736",
+          "x",
+          "100",
+          "=",
+          "94.23963133640552",
+          "%",
+          "89.0847871406627"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "1636": "1461",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "28",
+            "=": "=",
+            "/": "/",
+            "1736": 1568,
+            "100": 100,
+            "94.23963133640552": 93.17602040816327,
+            "%": "%"
+          },
+          {
+            "Januari": "Maret",
+            "1636": "1386",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": 79.83870967741935,
+            "%": "%"
+          },
+          {
+            "Januari": "April",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "/": "/",
+            "1736": 1680,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%",
+            "89.0847871406627": 0
+          },
+          {
+            "Januari": "Mei",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "Juni",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "/": "/",
+            "1736": 1680,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "Juli",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%",
+            "89.0847871406627": 0
+          },
+          {
+            "Januari": "Agustus",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "September",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "/": "/",
+            "1736": 1680,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "Oktober",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%",
+            "89.0847871406627": 0
+          },
+          {
+            "Januari": "November",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "/": "/",
+            "1736": 1680,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "Desember",
+            "Hari": "Hari",
+            "56": "56",
+            "x": "x",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "/": "/",
+            "1736": 1736,
+            "100": 100,
+            "94.23963133640552": "0",
+            "%": "%"
+          },
+          {
+            "1636": "4483"
+          },
+          {
+            "94.23963133640552": 267.2543614219881
+          },
+          {
+            "Januari": "BOR  2026",
+            "1636": 22.271196785165674,
+            "Hari": "%",
+            "94.23963133640552": "12"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "GDR": {
+      "sheet_name": "GDR",
+      "title_detected": "( Gross Death  Rate ) / Angka Kematian Pasien Rawat Inap diatas 48 Jam",
+      "dimensions": {
+        "rows": 34,
+        "columns": 11
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "403",
+          "Orang",
+          "7",
+          "Orang",
+          "1.7369727047146404",
+          "%",
+          "4",
+          "3",
+          "1.2328333110794942"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "403": "363",
+            "Orang": "Orang",
+            "7": "4",
+            "1.7369727047146404": 1.1019283746556474,
+            "%": "%",
+            "4": "4",
+            "3": "0"
+          },
+          {
+            "Januari": "Maret",
+            "403": "349",
+            "Orang": "Orang",
+            "7": "3",
+            "1.7369727047146404": 0.8595988538681949,
+            "%": "%",
+            "4": "2",
+            "3": "1"
+          },
+          {
+            "Januari": "April",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Mei",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Juni",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Juli",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Agustus",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "September",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Oktober",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "November",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Desember",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "GDR 2026",
+            "7": "14",
+            "4": "10",
+            "3": "4"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "NDR": {
+      "sheet_name": "NDR",
+      "title_detected": "( Net Death  Rate ) / Angka Kematian Pasien dibawah 48 Jam",
+      "dimensions": {
+        "rows": 33,
+        "columns": 11
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "403",
+          "Orang",
+          "0",
+          "Orang",
+          "0",
+          "%",
+          "0",
+          "0",
+          "0.09551098376313276"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "403": "363",
+            "Orang": "Orang",
+            "0": "0",
+            "%": "%"
+          },
+          {
+            "Januari": "Maret",
+            "403": "349",
+            "Orang": "Orang",
+            "0": "1",
+            "%": "%"
+          },
+          {
+            "Januari": "April",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Mei",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Juni",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Juli",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Agustus",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "September",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Oktober",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "November",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "Desember",
+            "Orang": "Orang",
+            "%": "%"
+          },
+          {
+            "Januari": "NDR 2026",
+            "403": "1115",
+            "0": "1"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "BTO": {
+      "sheet_name": "BTO",
+      "title_detected": "( Bed Turn Over  ) / Jumlah pasien per  tempat tidur",
+      "dimensions": {
+        "rows": 34,
+        "columns": 9
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "403",
+          "Orang",
+          "56",
+          "bed",
+          "7.196428571428571",
+          "kali",
+          "6.636904761904762"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "403": "363",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": 6.482142857142857,
+            "kali": "kali"
+          },
+          {
+            "Januari": "Maret",
+            "403": "349",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": 6.232142857142857,
+            "kali": "kali"
+          },
+          {
+            "Januari": "April",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali",
+            "6.636904761904762": 0
+          },
+          {
+            "Januari": "Mei",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "Januari": "Juni",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "Januari": "Juli",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali",
+            "6.636904761904762": 0
+          },
+          {
+            "Januari": "Agustus",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "Januari": "September",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "Januari": "Oktober",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali",
+            "6.636904761904762": 0
+          },
+          {
+            "Januari": "November",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "Januari": "Desember",
+            "Orang": "Orang",
+            "56": "56",
+            "bed": "bed",
+            "7.196428571428571": "0",
+            "kali": "kali"
+          },
+          {
+            "403": "1115"
+          },
+          {
+            "Januari": "BTO 2026",
+            "7.196428571428571": 19.910714285714285
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "TOI": {
+      "sheet_name": "TOI",
+      "title_detected": "( Turn Owner Interval ) / Rata - rata hari tempat tidur kosong hingga terisi lagi",
+      "dimensions": {
+        "rows": 33,
+        "columns": 17
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "56",
+          "bed",
+          "31",
+          "=",
+          "1736",
+          "-",
+          "1234",
+          "=",
+          "502",
+          "/",
+          "403",
+          "=",
+          "1.2456575682382134",
+          "hari",
+          "1.5097645387119292"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "56": "56",
+            "bed": "bed",
+            "31": "28",
+            "=": "=",
+            "1736": 1568,
+            "-": "-",
+            "1234": "1101",
+            "502": 467,
+            "/": "/",
+            "403": "363",
+            "1.2456575682382134": 1.2865013774104683,
+            "hari": "hari"
+          },
+          {
+            "Januari": "Maret",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "1234": "1039",
+            "502": 697,
+            "/": "/",
+            "403": "349",
+            "1.2456575682382134": 1.997134670487106,
+            "hari": "hari"
+          },
+          {
+            "Januari": "April",
+            "56": "56",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "1736": 1680,
+            "-": "-",
+            "502": 1680,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Mei",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "502": 1736,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Juni",
+            "56": "56",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "1736": 1680,
+            "-": "-",
+            "502": 1680,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Juli",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "502": 1736,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Agustus",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "502": 1736,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "September",
+            "56": "56",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "1736": 1680,
+            "-": "-",
+            "502": 1680,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Oktober",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "502": 1736,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "November",
+            "56": "56",
+            "bed": "bed",
+            "31": "30",
+            "=": "=",
+            "1736": 1680,
+            "-": "-",
+            "502": 1680,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "Januari": "Desember",
+            "56": "56",
+            "bed": "bed",
+            "31": "31",
+            "=": "=",
+            "1736": 1736,
+            "-": "-",
+            "502": 1736,
+            "/": "/",
+            "hari": "hari"
+          },
+          {
+            "1234": "3374",
+            "403": "1115"
+          },
+          {
+            "Januari": "TOI 2026"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "Prop": {
+      "sheet_name": "Prop",
+      "title_detected": "Pasien Rawat  Inap  Berdasarkan Asal  Propinsi",
+      "dimensions": {
+        "rows": 27,
+        "columns": 46
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "403",
+          "Orang",
+          "0",
+          "column_5",
+          "%",
+          "0",
+          "column_8",
+          "%",
+          "3",
+          "0.7444168734491315",
+          "%",
+          "7",
+          "1.7369727047146404",
+          "%",
+          "0",
+          "column_17",
+          "%",
+          "0",
+          "column_20",
+          "%",
+          "2",
+          "0.49627791563275436",
+          "%",
+          "0",
+          "column_26",
+          "%",
+          "15",
+          "3.722084367245657",
+          "%",
+          "370",
+          "91.81141439205956",
+          "%",
+          "5",
+          "1.240694789081886",
+          "%",
+          "1",
+          "0.24813895781637718",
+          "%",
+          "0",
+          "column_41",
+          "%",
+          "403"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "403": 363,
+            "Orang": "Orang",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "column_8": 0.27548209366391185,
+            "3": "3",
+            "0.7444168734491315": 0.8264462809917356,
+            "7": "8",
+            "1.7369727047146404": 2.203856749311295,
+            "column_17": 0.27548209366391185,
+            "column_20": 0,
+            "2": "0",
+            "0.49627791563275436": 0,
+            "column_26": 0,
+            "15": "18",
+            "3.722084367245657": 4.958677685950414,
+            "370": "329",
+            "91.81141439205956": 90.633608815427,
+            "5": "3",
+            "1.240694789081886": 0.8264462809917356,
+            "1": "0",
+            "0.24813895781637718": 0,
+            "column_41": 0
+          },
+          {
+            "Januari": "Maret",
+            "403": 349,
+            "Orang": "Orang",
+            "0": "1",
+            "column_5": 0.5730659025787965,
+            "%": "%",
+            "column_8": 0.8595988538681949,
+            "3": "6",
+            "0.7444168734491315": 1.7191977077363898,
+            "7": "5",
+            "1.7369727047146404": 1.4326647564469914,
+            "column_17": 0.28653295128939826,
+            "column_20": 0.28653295128939826,
+            "2": "0",
+            "0.49627791563275436": 0,
+            "column_26": 0,
+            "15": "12",
+            "3.722084367245657": 3.4383954154727796,
+            "370": "314",
+            "91.81141439205956": 89.97134670487105,
+            "5": "4",
+            "1.240694789081886": 1.146131805157593,
+            "1": "0",
+            "0.24813895781637718": 0,
+            "column_41": 0.28653295128939826
+          },
+          {
+            "Januari": "April",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Mei",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Juni",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Juli",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Agustus",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "September",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Oktober",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "November",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Desember",
+            "Orang": "Orang",
+            "%": "%",
+            "403": 0
+          },
+          {
+            "Januari": "Total",
+            "403": 1115,
+            "Orang": "Orang",
+            "0": "1",
+            "%": "%",
+            "3": "12",
+            "7": "20",
+            "2": "2",
+            "15": "45",
+            "370": "1013",
+            "5": "12",
+            "1": "1"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "UMUR": {
+      "sheet_name": "UMUR",
+      "title_detected": "Pasien Rawat  Inap  Menurut Kelompok Umur",
+      "dimensions": {
+        "rows": 27,
+        "columns": 9
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "<1",
+          "1 --4",
+          "5 --14",
+          "15 --44",
+          "> 45",
+          "column_7",
+          "column_8"
+        ],
+        "rows": [
+          {
+            "column_1": "Januari",
+            "<1": "72",
+            "1 --4": "10",
+            "5 --14": "25",
+            "15 --44": "135",
+            "> 45": "161",
+            "column_7": "403",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Februari",
+            "<1": "63",
+            "1 --4": "6",
+            "5 --14": "12",
+            "15 --44": "141",
+            "> 45": "141",
+            "column_7": "363",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Maret",
+            "<1": "74",
+            "1 --4": "13",
+            "5 --14": "9",
+            "15 --44": "132",
+            "> 45": "121",
+            "column_7": "349",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "April",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Mei",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Juni",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Juli",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Agustus",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "September",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Oktober",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "November",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Desember",
+            "column_7": "0",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Total",
+            "<1": "209",
+            "1 --4": "29",
+            "5 --14": "46",
+            "15 --44": "408",
+            "> 45": "423",
+            "column_7": "1115",
+            "column_8": "Orang"
+          },
+          {
+            "column_1": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "Penyakit": {
+      "sheet_name": "Penyakit",
+      "title_detected": "Pasien Rawat  Inap Berdasarkan Penyakit dan jenis kelamin",
+      "dimensions": {
+        "rows": 29,
+        "columns": 21
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "ANAK",
+          "BEDAH",
+          "B.ONK",
+          "B. ORTHO",
+          "COVID",
+          "GIGI",
+          "JANTUNG",
+          "KEBIDANAN",
+          "KULIT",
+          "MATA",
+          "NEURO",
+          "PARU",
+          "P.DALAM",
+          "THT",
+          "URO",
+          "JMLH",
+          "column_18",
+          "L",
+          "P",
+          "Jlh"
+        ],
+        "rows": [
+          {
+            "column_1": "JANUARI",
+            "ANAK": "89",
+            "BEDAH": "32",
+            "B.ONK": "23",
+            "B. ORTHO": "1",
+            "COVID": "0",
+            "GIGI": "0",
+            "JANTUNG": "11",
+            "KEBIDANAN": "77",
+            "KULIT": "0",
+            "MATA": "1",
+            "NEURO": "3",
+            "PARU": "124",
+            "P.DALAM": "38",
+            "THT": "4",
+            "URO": "0",
+            "JMLH": "403",
+            "L": "161",
+            "P": "242",
+            "Jlh": "403"
+          },
+          {
+            "column_1": "FEBRUARI",
+            "ANAK": "73",
+            "BEDAH": "28",
+            "B.ONK": "24",
+            "B. ORTHO": "2",
+            "COVID": "0",
+            "GIGI": "0",
+            "JANTUNG": "8",
+            "KEBIDANAN": "79",
+            "KULIT": "0",
+            "MATA": "0",
+            "NEURO": "2",
+            "PARU": "109",
+            "P.DALAM": "38",
+            "THT": "0",
+            "URO": "0",
+            "JMLH": "363",
+            "L": "164",
+            "P": "199",
+            "Jlh": "363"
+          },
+          {
+            "column_1": "MARET",
+            "ANAK": "87",
+            "BEDAH": "17",
+            "B.ONK": "29",
+            "B. ORTHO": "1",
+            "COVID": "0",
+            "GIGI": "0",
+            "JANTUNG": "11",
+            "KEBIDANAN": "73",
+            "KULIT": "0",
+            "MATA": "0",
+            "NEURO": "2",
+            "PARU": "89",
+            "P.DALAM": "36",
+            "THT": "4",
+            "URO": "0",
+            "JMLH": "349",
+            "L": "145",
+            "P": "204",
+            "Jlh": "349"
+          },
+          {
+            "column_1": "APRIL",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "MEI",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "JUNI",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "JULI",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "AGUSTUS",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "SEPTEMBER",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "OKTOBER",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "NOPEMBER",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "DESEMBER",
+            "JMLH": "0",
+            "Jlh": "0"
+          },
+          {
+            "column_1": "TOTAL",
+            "ANAK": "249",
+            "BEDAH": "77",
+            "B.ONK": "76",
+            "B. ORTHO": "4",
+            "COVID": "0",
+            "GIGI": "0",
+            "JANTUNG": "30",
+            "KEBIDANAN": "229",
+            "KULIT": "0",
+            "MATA": "1",
+            "NEURO": "7",
+            "PARU": "322",
+            "P.DALAM": "112",
+            "THT": "8",
+            "URO": "0",
+            "JMLH": "1115",
+            "L": "470",
+            "P": "645",
+            "Jlh": "1115"
+          },
+          {
+            "column_1": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "KAMAR RAWTAN": {
+      "sheet_name": "KAMAR RAWTAN",
+      "title_detected": "Pasien Rawat  Inap Berdasarkan kamar rawatan dan jenis kelamin",
+      "dimensions": {
+        "rows": 31,
+        "columns": 44
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "column_2",
+          "L",
+          "P",
+          "Jlh",
+          "column_6",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "p",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "L",
+          "P",
+          "Jlh",
+          "column_34"
+        ],
+        "rows": [
+          {
+            "column_1": "Januari",
+            "column_2": "403",
+            "L": "6",
+            "P": "6",
+            "Jlh": "12",
+            "p": "124",
+            "column_34": 403
+          },
+          {
+            "column_1": "Februari",
+            "column_2": "363",
+            "L": "5",
+            "P": "5",
+            "Jlh": "10",
+            "p": "110",
+            "column_34": 363
+          },
+          {
+            "column_1": "Maret",
+            "column_2": "349",
+            "L": "11",
+            "P": "7",
+            "Jlh": "18",
+            "p": "103",
+            "column_34": 349
+          },
+          {
+            "column_1": "April",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Mei",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Juni",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Juli",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Agustus",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "September",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Oktober",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "November",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "Desember",
+            "Jlh": "0",
+            "column_34": 0
+          },
+          {
+            "column_1": "TOTAL",
+            "column_2": "1115",
+            "L": "22",
+            "P": "18",
+            "Jlh": "40",
+            "p": "337",
+            "column_34": 1115
+          },
+          {
+            "column_6": 1115
+          },
+          {
+            "column_1": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "JML HARI RWTN": {
+      "sheet_name": "JML HARI RWTN",
+      "title_detected": "Pasien Rawat  Inap Berdasarkan Hari Rawatan Per Penyakit",
+      "dimensions": {
+        "rows": 26,
+        "columns": 24
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "ANAK",
+          "BEDAH",
+          "B. ONK",
+          "B.ORTHO",
+          "JANTUNG",
+          "KEBIDANAN",
+          "KULIT",
+          "MATA",
+          "SARAF",
+          "PARU",
+          "P.DALAM",
+          "THT",
+          "URO",
+          "COVID",
+          "column_16",
+          "column_17"
+        ],
+        "rows": [
+          {
+            "column_1": "JANUARI",
+            "ANAK": "329",
+            "BEDAH": "84",
+            "B. ONK": "70",
+            "B.ORTHO": "4",
+            "JANTUNG": "49",
+            "KEBIDANAN": "230",
+            "KULIT": "0",
+            "MATA": "2",
+            "SARAF": "15",
+            "PARU": "644",
+            "P.DALAM": "197",
+            "THT": "12",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "1636"
+          },
+          {
+            "column_1": "FEBRUARI",
+            "ANAK": "273",
+            "BEDAH": "68",
+            "B. ONK": "78",
+            "B.ORTHO": "11",
+            "JANTUNG": "37",
+            "KEBIDANAN": "230",
+            "KULIT": "0",
+            "MATA": "0",
+            "SARAF": "12",
+            "PARU": "554",
+            "P.DALAM": "198",
+            "THT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "1461"
+          },
+          {
+            "column_1": "MARET",
+            "ANAK": "341",
+            "BEDAH": "48",
+            "B. ONK": "86",
+            "B.ORTHO": "2",
+            "JANTUNG": "51",
+            "KEBIDANAN": "214",
+            "KULIT": "0",
+            "MATA": "0",
+            "SARAF": "6",
+            "PARU": "455",
+            "P.DALAM": "168",
+            "THT": "15",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "1386"
+          },
+          {
+            "column_1": "APRIL",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "MEI",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0",
+            "column_17": ""
+          },
+          {
+            "column_1": "JUNI",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "JULI",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "AGUSTUS",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "SEPTEMBER",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "OKTOBER",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "NOPEMBER",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "DESEMBER",
+            "KULIT": "0",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "0"
+          },
+          {
+            "column_1": "TOTAL",
+            "ANAK": "943",
+            "BEDAH": "200",
+            "B. ONK": "234",
+            "B.ORTHO": "17",
+            "JANTUNG": "137",
+            "KEBIDANAN": "674",
+            "KULIT": "0",
+            "MATA": "2",
+            "SARAF": "33",
+            "PARU": "1653",
+            "P.DALAM": "563",
+            "THT": "27",
+            "URO": "0",
+            "COVID": "0",
+            "column_16": "4483"
+          },
+          {
+            "column_1": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "JML pasien  - dokter": {
+      "sheet_name": "JML pasien  - dokter",
+      "title_detected": "Jumlah Pasien Rawat  Inap Berdasarkan Dokter Yang Merawat",
+      "dimensions": {
+        "rows": 27,
+        "columns": 54
+      },
+      "structured_table": {
+        "headers": [
+          "BULAN",
+          "dr. Anton",
+          "dr. Arif",
+          "dr. AH",
+          "dr. AD",
+          "dr. BO",
+          "dr. DH",
+          "dr. DM",
+          "dr. ERI",
+          "dr. FRTA",
+          "dr. Feny",
+          "dr. FA",
+          "dr. FF",
+          "dr. HZ",
+          "dr.Hesti",
+          "dr. Is",
+          "dr. Katerine",
+          "dr. KJ",
+          "dr. LZ",
+          "dr. Mimin",
+          "dr. MF",
+          "dr.MY",
+          "dr. NZ",
+          "dr. RB",
+          "dr SYT",
+          "dr. TF",
+          "dr. VJ",
+          "dr. VR",
+          "dr. YL",
+          "dr. ZF",
+          "JLH",
+          "column_32",
+          "column_33",
+          "column_34",
+          "column_35",
+          "column_36",
+          "column_37"
+        ],
+        "rows": [
+          {
+            "dr. Anton": "1",
+            "dr. Arif": "1",
+            "dr. AH": "16",
+            "dr. AD": "9",
+            "dr. BO": "38",
+            "dr. DH": "103",
+            "dr. DM": "1",
+            "dr. ERI": "1",
+            "dr. FRTA": "9",
+            "dr. Feny": "3",
+            "dr. FA": "2",
+            "dr. FF": "27",
+            "dr. HZ": "22",
+            "dr.Hesti": "0",
+            "dr. Is": "23",
+            "dr. Katerine": "21",
+            "dr. KJ": "1",
+            "dr. LZ": "34",
+            "dr. Mimin": "0",
+            "dr. MF": "0",
+            "dr.MY": "4",
+            "dr. NZ": "17",
+            "dr. RB": "6",
+            "dr SYT": "0",
+            "dr. TF": "6",
+            "dr. VJ": "2",
+            "dr. VR": "1",
+            "dr. YL": "38",
+            "dr. ZF": "17",
+            "JLH": "403"
+          },
+          {
+            "BULAN": "JANUARI",
+            "dr. Anton": "1",
+            "dr. Arif": "1",
+            "dr. AH": "21",
+            "dr. AD": "3",
+            "dr. BO": "26",
+            "dr. DH": "91",
+            "dr. DM": "3",
+            "dr. ERI": "2",
+            "dr. FRTA": "3",
+            "dr. Feny": "3",
+            "dr. FA": "1",
+            "dr. FF": "31",
+            "dr. HZ": "10",
+            "dr.Hesti": "0",
+            "dr. Is": "24",
+            "dr. Katerine": "18",
+            "dr. KJ": "0",
+            "dr. LZ": "21",
+            "dr. Mimin": "0",
+            "dr. MF": "0",
+            "dr.MY": "0",
+            "dr. NZ": "18",
+            "dr. RB": "3",
+            "dr SYT": "0",
+            "dr. TF": "3",
+            "dr. VJ": "2",
+            "dr. VR": "1",
+            "dr. YL": "34",
+            "dr. ZF": "43",
+            "JLH": "363",
+            "column_32": "dr. AD",
+            "column_33": "dr. Azwir Dahlan, Sp.PD",
+            "column_34": "dr. FRT",
+            "column_35": "dr. Febratha, Sp.B",
+            "column_36": "dr. NZ",
+            "column_37": "dr. Nazdi,Sp. A"
+          },
+          {
+            "BULAN": "FEBRUARI",
+            "dr. Anton": "1",
+            "dr. Arif": "0",
+            "dr. AH": "17",
+            "dr. AD": "9",
+            "dr. BO": "29",
+            "dr. DH": "73",
+            "dr. DM": "2",
+            "dr. ERI": "1",
+            "dr. FRTA": "0",
+            "dr. Feny": "5",
+            "dr. FA": "1",
+            "dr. FF": "24",
+            "dr. HZ": "15",
+            "dr.Hesti": "0",
+            "dr. Is": "29",
+            "dr. Katerine": "12",
+            "dr. KJ": "0",
+            "dr. LZ": "29",
+            "dr. Mimin": "0",
+            "dr. MF": "1",
+            "dr.MY": "4",
+            "dr. NZ": "25",
+            "dr. RB": "0",
+            "dr SYT": "3",
+            "dr. TF": "4",
+            "dr. VJ": "2",
+            "dr. VR": "1",
+            "dr. YL": "33",
+            "dr. ZF": "29",
+            "JLH": "349",
+            "column_32": "dr. AH",
+            "column_33": "dr. Arsil Hamzah, Sp. B",
+            "column_34": "dr. HFZ",
+            "column_35": "dr. Hafizar, Sp. U",
+            "column_36": "dr. RB",
+            "column_37": "dr. Risbeny, Sp. B"
+          },
+          {
+            "BULAN": "MARET",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_32": "dr. DH",
+            "column_33": "dr. Deddy Herman, Sp.PFCCP",
+            "column_34": "dr. HST",
+            "column_35": "dr. Hesti, Sp. M",
+            "column_36": "dr. SYT",
+            "column_37": "dr. Suyastri,Sp.P"
+          },
+          {
+            "BULAN": "APRIL",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_32": "dr. DM",
+            "column_33": "dr. Desi Marlinda, Sp. PD",
+            "column_34": "dr. HZ",
+            "column_35": "dr. Hendri Zola, Sp. OG",
+            "column_36": "dr. SPRDI",
+            "column_37": "dr. Supriadi, Sp.U"
+          },
+          {
+            "BULAN": "MEI",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_32": "dr. ERI",
+            "column_33": "dr. Erinaldi, Sp. OT",
+            "column_34": "dr. IS",
+            "column_35": "dr. Ismeldi, Sp. B (K) ONK",
+            "column_36": "dr. TF",
+            "column_37": "dr. Trian Faesa, Sp. JP"
+          },
+          {
+            "BULAN": "JUNI",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_32": "dr. FA",
+            "column_33": "dr. Ferdhi Adha, Sp. S",
+            "column_34": "dr. KJ",
+            "column_35": "dr. Khair Johari, Sp. M",
+            "column_36": "dr. VR",
+            "column_37": "dr. Verra Roza, Sp. PD"
+          },
+          {
+            "BULAN": "JULI",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_32": "dr. FR",
+            "column_33": "dr. Fifi Riassukma, Sp. PD",
+            "column_34": "dr. LZ",
+            "column_35": "dr. Liza Fitria, Sp. A",
+            "column_36": "dr. VY",
+            "column_37": "dr. Vera Yulia, Sp.JP"
+          },
+          {
+            "BULAN": "AGUSTUS",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_34": "dr. MF",
+            "column_35": "dr. Muhammad Fajri, Sp.P",
+            "column_36": "dr. Yelli",
+            "column_37": "dr. Yelli, Sp. A"
+          },
+          {
+            "BULAN": "SEPTEMBER",
+            "dr. Mimin": "0",
+            "JLH": "0",
+            "column_34": "dr. MY",
+            "column_35": "dr. Muhammad Yunus, Sp. THT",
+            "column_36": "dr. ZF",
+            "column_37": "dr. Zeino Fridsto, Sp.OG"
+          },
+          {
+            "BULAN": "OKTOBER",
+            "dr. Mimin": "0",
+            "JLH": "0"
+          },
+          {
+            "BULAN": "NOPEMBER",
+            "dr. Mimin": "0",
+            "JLH": "0"
+          },
+          {
+            "BULAN": "DESEMBER",
+            "dr. Mimin": "0",
+            "JLH": "0"
+          },
+          {
+            "dr. Mimin": "0"
+          },
+          {
+            "BULAN": "TOTAL",
+            "dr. Anton": "2",
+            "dr. Arif": "1",
+            "dr. AH": "38",
+            "dr. AD": "12",
+            "dr. BO": "55",
+            "dr. DH": "164",
+            "dr. DM": "5",
+            "dr. ERI": "3",
+            "dr. FRTA": "3",
+            "dr. FA": "2",
+            "dr. FF": "55",
+            "dr. HZ": "25",
+            "dr.Hesti": "0",
+            "dr. Is": "53",
+            "dr. Katerine": "30",
+            "dr. KJ": "0",
+            "dr. LZ": "50",
+            "dr. Mimin": "0",
+            "dr. MF": "1",
+            "dr.MY": "4",
+            "dr. NZ": "43",
+            "dr. RB": "3",
+            "dr SYT": "3",
+            "dr. TF": "7",
+            "dr. VJ": "4",
+            "dr. VR": "2",
+            "dr. YL": "67",
+            "dr. ZF": "72",
+            "JLH": "704"
+          },
+          {
+            "BULAN": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "PEMBIAYAAN": {
+      "sheet_name": "PEMBIAYAAN",
+      "title_detected": "Jumlah Pasien Rawat  Inap Berdasarkan Cara Bayar",
+      "dimensions": {
+        "rows": 25,
+        "columns": 73
+      },
+      "structured_table": {
+        "headers": [
+          "Januari",
+          "403",
+          "ORANG",
+          "0",
+          "column_5",
+          "%",
+          "0",
+          "column_8",
+          "%",
+          "2",
+          "0.49627791563275436",
+          "%",
+          "0",
+          "column_14",
+          "%",
+          "3",
+          "0.7444168734491315",
+          "%",
+          "0",
+          "column_20",
+          "%",
+          "356",
+          "88.33746898263027",
+          "%",
+          "0",
+          "column_26",
+          "%",
+          "2",
+          "0.49627791563275436",
+          "%",
+          "31",
+          "7.6923076923076925",
+          "%",
+          "0",
+          "column_35",
+          "%",
+          "0",
+          "column_38",
+          "%",
+          "1",
+          "0.24813895781637718",
+          "%",
+          "0",
+          "column_44",
+          "%",
+          "0",
+          "column_47",
+          "%",
+          "0",
+          "column_50",
+          "%",
+          "1",
+          "0.24813895781637718",
+          "%",
+          "6",
+          "1.488833746898263",
+          "%",
+          "0",
+          "column_59",
+          "%",
+          "0",
+          "column_62",
+          "%",
+          "0",
+          "column_65",
+          "%",
+          "1",
+          "0.0024813895781637717",
+          "%",
+          "0",
+          "column_71",
+          "%",
+          "403"
+        ],
+        "rows": [
+          {
+            "Januari": "Februari",
+            "403": "363",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "column_8": 0,
+            "2": "2",
+            "0.49627791563275436": 0.5509641873278237,
+            "column_14": 0,
+            "3": "0",
+            "0.7444168734491315": 0,
+            "column_20": 0,
+            "356": "319",
+            "88.33746898263027": 87.87878787878788,
+            "column_26": 0,
+            "31": "37",
+            "7.6923076923076925": 10.192837465564738,
+            "column_35": 0,
+            "column_38": 0.27548209366391185,
+            "1": "0",
+            "0.24813895781637718": 0,
+            "column_44": 0,
+            "column_47": 0,
+            "column_50": 0,
+            "6": "0",
+            "1.488833746898263": 0,
+            "column_59": 0,
+            "column_62": 0,
+            "column_65": 0,
+            "0.0024813895781637717": 0,
+            "column_71": 0
+          },
+          {
+            "Januari": "Maret",
+            "403": "349",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "column_8": 0,
+            "2": "3",
+            "0.49627791563275436": 0.8595988538681949,
+            "column_14": 0,
+            "3": "0",
+            "0.7444168734491315": 0,
+            "column_20": 0,
+            "356": "312",
+            "88.33746898263027": 89.39828080229226,
+            "column_26": 0,
+            "31": "32",
+            "7.6923076923076925": 9.169054441260744,
+            "column_35": 0,
+            "column_38": 0.28653295128939826,
+            "1": "0",
+            "0.24813895781637718": 0.28653295128939826,
+            "column_44": 0,
+            "column_47": 0,
+            "column_50": 0,
+            "6": "0",
+            "1.488833746898263": 0,
+            "column_59": 0,
+            "column_62": 0,
+            "column_65": 0,
+            "0.0024813895781637717": 0,
+            "column_71": 0
+          },
+          {
+            "Januari": "April",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Mei",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Juni",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Juli",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Agustus",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "September",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Oktober",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "November",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "Desember",
+            "ORANG": "ORANG",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "1": "0",
+            "403": "0"
+          },
+          {
+            "Januari": "JUMLAH",
+            "403": "1115",
+            "0": "0",
+            "column_5": 0,
+            "%": "%",
+            "2": "7",
+            "3": "3",
+            "356": "987",
+            "31": "100",
+            "1": "1",
+            "6": "6"
+          },
+          {
+            "Januari": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "BPJS SAJA": {
+      "sheet_name": "BPJS SAJA",
+      "title_detected": "Jumlah Pasien Rawat  Inap BPJS  Berdasarkan  domisili",
+      "dimensions": {
+        "rows": 26,
+        "columns": 20
+      },
+      "structured_table": {
+        "headers": [
+          "column_1",
+          "JANUARI",
+          "356",
+          "262",
+          "73.59550561797754",
+          "%",
+          "94",
+          "26.40449438202247",
+          "%",
+          "356",
+          "column_11"
+        ],
+        "rows": [
+          {
+            "JANUARI": "FEBRUARI",
+            "356": 319,
+            "262": "233",
+            "73.59550561797754": 73.04075235109718,
+            "%": "%",
+            "94": "86",
+            "26.40449438202247": 26.959247648902824
+          },
+          {
+            "JANUARI": "MARET",
+            "356": 312,
+            "262": "212",
+            "73.59550561797754": 67.94871794871796,
+            "%": "%",
+            "94": "100",
+            "26.40449438202247": 32.05128205128205
+          },
+          {
+            "JANUARI": "APRIL",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "MEI",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "JUNI",
+            "%": "%",
+            "356": 0,
+            "column_11": ""
+          },
+          {
+            "JANUARI": "JULI",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "AGUSTUS",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "SEPTEMBER",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "OKTOBER",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "NOPEMBER",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "JANUARI": "DESEMBER",
+            "%": "%",
+            "356": 0
+          },
+          {
+            "356": "987",
+            "262": "707",
+            "94": "280"
+          },
+          {
+            "JANUARI": "Sumber data : Unit Rekam Medis RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "BESAR PENYAKIT R.INAP (SIRS)": {
+      "sheet_name": "BESAR PENYAKIT R.INAP (SIRS)",
+      "title_detected": "KODE PROPINSI KAB/KOTA Kode Rs Nama Rs Bulan Tahun No. Urut KODE ICD 10 Deskripsi Pasien Keluar hidup Menurut jenis Kelamin LK Pasien Keluar hidup Menurut jenis Kelamin PR Pasien Keluar Mati Menurut JK LK Pasien Keluar Mati Menurut JK PR Total All",
+      "dimensions": {
+        "rows": 121,
+        "columns": 14
+      },
+      "structured_table": {
+        "headers": [
+          "KODE PROPINSI",
+          "KAB/KOTA",
+          "Kode Rs",
+          "Nama Rs",
+          "Bulan",
+          "Tahun",
+          "No. Urut",
+          "KODE ICD 10",
+          "Deskripsi",
+          "Pasien Keluar hidup Menurut jenis Kelamin LK",
+          "Pasien Keluar hidup Menurut jenis Kelamin PR",
+          "Pasien Keluar Mati Menurut JK LK",
+          "Pasien Keluar Mati Menurut JK PR",
+          "Total All"
+        ],
+        "rows": [
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Januari",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Februari",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Maret",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "April",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Mei",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juni",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Juli",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Agustus",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "September",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Oktober",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "November",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "1"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "2"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "3"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "4"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "5"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "6"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "7"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "8"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "9"
+          },
+          {
+            "KODE PROPINSI": "13prop",
+            "KAB/KOTA": "Bukittinggi",
+            "Kode Rs": "1375051",
+            "Nama Rs": "RS Umum Madina",
+            "Bulan": "Desember",
+            "Tahun": "2024",
+            "No. Urut": "10"
+          }
+        ]
+      }
+    },
+    "RAWAT INAP (SIRS)": {
+      "sheet_name": "RAWAT INAP (SIRS)",
+      "title_detected": "NO JENIS PELAYANAN PASIEN AWAL TAHUN PASIEN MASUK PASIEN KELUAR HIDUP < 48 jam >= 48 jam JUMLAH LAMA DIRAWAT PASIEN AKHIR TAHUN JUMLAH HARI PERAWATAN VVIP VIP I II III KELAS KHUSUS",
+      "dimensions": {
+        "rows": 32,
+        "columns": 16
+      },
+      "structured_table": {
+        "headers": [
+          "NO",
+          "JENIS PELAYANAN",
+          "PASIEN AWAL TAHUN",
+          "PASIEN MASUK",
+          "PASIEN KELUAR HIDUP",
+          "< 48 jam",
+          ">= 48 jam",
+          "JUMLAH LAMA DIRAWAT",
+          "PASIEN AKHIR TAHUN",
+          "JUMLAH HARI PERAWATAN",
+          "VVIP",
+          "VIP",
+          "I",
+          "II",
+          "III",
+          "KELAS KHUSUS"
+        ],
+        "rows": [
+          {
+            "NO": "1",
+            "JENIS PELAYANAN": "Penyakit Dalam"
+          },
+          {
+            "NO": "2",
+            "JENIS PELAYANAN": "Kesehatan Anak"
+          },
+          {
+            "NO": "3",
+            "JENIS PELAYANAN": "Obstetri"
+          },
+          {
+            "NO": "4",
+            "JENIS PELAYANAN": "Ginekologi"
+          },
+          {
+            "NO": "5",
+            "JENIS PELAYANAN": "Bedah"
+          },
+          {
+            "NO": "6",
+            "JENIS PELAYANAN": "Bedah Orthopedi"
+          },
+          {
+            "NO": "7",
+            "JENIS PELAYANAN": "Bedah Saraf"
+          },
+          {
+            "NO": "8",
+            "JENIS PELAYANAN": "Luka Bakar"
+          },
+          {
+            "NO": "9",
+            "JENIS PELAYANAN": "S a r a f"
+          },
+          {
+            "NO": "10",
+            "JENIS PELAYANAN": "J i w a"
+          },
+          {
+            "NO": "11",
+            "JENIS PELAYANAN": "Psikologi"
+          },
+          {
+            "NO": "12",
+            "JENIS PELAYANAN": "Penatalaksana Pnyguna. NAPZA"
+          },
+          {
+            "NO": "13",
+            "JENIS PELAYANAN": "T H T"
+          },
+          {
+            "NO": "14",
+            "JENIS PELAYANAN": "M a t a"
+          },
+          {
+            "NO": "15",
+            "JENIS PELAYANAN": "Kulit & Kelamin"
+          },
+          {
+            "NO": "16",
+            "JENIS PELAYANAN": "Kardiologi"
+          },
+          {
+            "NO": "17",
+            "JENIS PELAYANAN": "Paru-paru"
+          },
+          {
+            "NO": "18",
+            "JENIS PELAYANAN": "Geriatri"
+          },
+          {
+            "NO": "19",
+            "JENIS PELAYANAN": "Radioterapi"
+          },
+          {
+            "NO": "20",
+            "JENIS PELAYANAN": "Kedokteran Nuklir"
+          },
+          {
+            "NO": "21",
+            "JENIS PELAYANAN": "K u s t a"
+          },
+          {
+            "NO": "22",
+            "JENIS PELAYANAN": "Rehabilitasi Medik"
+          },
+          {
+            "NO": "23",
+            "JENIS PELAYANAN": "Isolasi"
+          },
+          {
+            "NO": "24",
+            "JENIS PELAYANAN": "I C U"
+          },
+          {
+            "NO": "25",
+            "JENIS PELAYANAN": "I C C U"
+          },
+          {
+            "NO": "26",
+            "JENIS PELAYANAN": "NICU / PICU"
+          },
+          {
+            "NO": "27",
+            "JENIS PELAYANAN": "Umum"
+          },
+          {
+            "NO": "28",
+            "JENIS PELAYANAN": "Gigi & Mulut"
+          },
+          {
+            "NO": "29",
+            "JENIS PELAYANAN": "Pelayanan Rawat Darurat"
+          },
+          {
+            "NO": "30",
+            "JENIS PELAYANAN": "Perinatologi"
+          },
+          {
+            "NO": "31",
+            "JENIS PELAYANAN": "Bedah Onkologi"
+          }
+        ]
+      }
+    },
+    "LAPORAN AKHIR TAHUN": {
+      "sheet_name": "LAPORAN AKHIR TAHUN",
+      "title_detected": "SENSUS RAWAT INAP TAHUN 2021",
+      "dimensions": {
+        "rows": 9,
+        "columns": 3
+      },
+      "structured_table": {
+        "headers": [
+          "LOS",
+          "HARI"
+        ],
+        "rows": [
+          {
+            "LOS": "BOR",
+            "HARI": "%"
+          },
+          {
+            "LOS": "GDR"
+          },
+          {
+            "LOS": "NDR"
+          },
+          {
+            "LOS": "BTO",
+            "HARI": "KALI"
+          },
+          {
+            "LOS": "TOI",
+            "HARI": "KALI"
+          }
+        ]
+      }
+    },
+    "COVER 1": {
+      "sheet_name": "COVER 1",
+      "title_detected": "SENSUS  RAWAT  INAP",
+      "dimensions": {
+        "rows": 44,
+        "columns": 2
+      },
+      "structured_table": {
+        "headers": [
+          "{ 1 }",
+          "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia"
+        ],
+        "rows": [
+          {
+            "{ 1 }": "{ 2 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "LOS"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Length Of Stay ) /  Rata - rata lama hari rawatan per  pasien"
+          },
+          {
+            "{ 1 }": "{ 3 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "B O R"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Bed Occupancy Rate ) / Pemakaian Tempat Tidur"
+          },
+          {
+            "{ 1 }": "{ 4 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "GDR"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Gross Death  Rate ) / Angka Kematian Pasien Rawat Inap"
+          },
+          {
+            "{ 1 }": "{ 5 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "NDR"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Net Death  Rate ) / Angka Kematian Pasien < 48 Jam"
+          },
+          {
+            "{ 1 }": "{ 6 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "B TO"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Bed Turn Over  ) / Jumlah pasien per  tempat tidur"
+          },
+          {
+            "{ 1 }": "{ 7 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "TOI"
+          },
+          {
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "( Turn Owner Interval ) / Rata - rata hari tempat tidur kosong hingga terisi lagi"
+          },
+          {
+            "{ 1 }": "{ 8 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Pasien Rawat  Inap  Berdasarkan Asal  Propinsi"
+          },
+          {
+            "{ 1 }": "{ 9 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Pasien Rawat  Inap  Menurut Kelompok Umur"
+          },
+          {
+            "{ 1 }": "{ 10 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Pasien Rawat  Inap Berdasarkan Penyakit dan jenis kelamin"
+          },
+          {
+            "{ 1 }": "{ 11 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Pasien Rawat  Inap Berdasarkan kamar Rawatan"
+          },
+          {
+            "{ 1 }": "{ 12 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Pasien Rawat  Inap Berdasarkan Hari Rawatan Per Penyakit"
+          },
+          {
+            "{ 1 }": "{ 13 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Jumlah Pasien Rawat  Inap Berdasarkan Dokter Yang Merawat"
+          },
+          {
+            "{ 1 }": "{ 14 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "Jumlah Pasien Rawat  Inap Berdasarkan cara bayar"
+          },
+          {
+            "{ 1 }": "{ 15 }",
+            "Jumlah Pasien Rawat Inap , Hari Rawatan dan Meninggal Dunia": "10 diagnosa terbanyak pasien rawat inap"
+          },
+          {
+            "{ 1 }": "ARSIP REKAM MEDIS - RSU. MADINA"
+          }
+        ]
+      }
+    },
+    "COVER ": {
+      "sheet_name": "COVER ",
+      "title_detected": null,
+      "dimensions": {
+        "rows": 19,
+        "columns": 1
+      },
+      "structured_table": []
+    }
+  }
+}

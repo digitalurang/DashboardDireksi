@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — Dashboard Direksi RS Madina</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --c-primary: #3B82F6;
+            --c-primary-dark: #1D4ED8;
+            --c-primary-light: rgba(59, 130, 246, 0.1);
+            --bg-base: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --text-main: #0F172A;
+            --text-sub: #475569;
+            --text-mute: #94A3B8;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+        }
+
+        /* Support Dark Mode system preference or dynamic class */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-base: #0B0F19;
+                --bg-card: #111827;
+                --text-main: #F9FAFB;
+                --text-sub: #9CA3AF;
+                --text-mute: #6B7280;
+                --border-color: #1F2937;
+                --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+            }
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Subtle minimalist background art */
+        .bg-decor {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-decor-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.08;
+        }
+
+        .decor-1 {
+            background-color: #3B82F6;
+            width: 400px;
+            height: 400px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .decor-2 {
+            background-color: #8B5CF6;
+            width: 500px;
+            height: 500px;
+            bottom: -150px;
+            right: -100px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .login-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 44px 36px;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo-box {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-box:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        .logo-box i {
+            color: #FFFFFF;
+            font-size: 24px;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-sub);
+        }
+
+        /* Error Notification Banner */
+        .error-banner {
+            background-color: #FEF2F2;
+            border: 1px solid #FCA5A5;
+            border-radius: var(--radius-md);
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .error-banner {
+                background-color: rgba(220, 38, 38, 0.1);
+                border-color: rgba(220, 38, 38, 0.3);
+            }
+        }
+
+        .error-banner i {
+            color: #EF4444;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .error-banner span {
+            color: #B91C1C;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .error-banner span {
+                color: #FCA5A5;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-6px); }
+            40% { transform: translateX(6px); }
+            60% { transform: translateX(-4px); }
+            80% { transform: translateX(4px); }
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .input-control {
+            position: relative;
+        }
+
+        .input-control > i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-mute);
+            font-size: 14px;
+            transition: color 0.2s ease;
+            pointer-events: none;
+        }
+
+        .input-control input {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px 0 42px;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text-main);
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .input-control input::placeholder {
+            color: var(--text-mute);
+            opacity: 0.7;
+        }
+
+        .input-control input:focus {
+            border-color: var(--c-primary);
+            box-shadow: 0 0 0 4px var(--c-primary-light);
+        }
+
+        .input-control input:focus + i {
+            color: var(--c-primary);
+        }
+
+        /* Toggle Password Button */
+        .btn-toggle-pw {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-mute);
+            cursor: pointer;
+            font-size: 14px;
+            padding: 4px;
+            transition: color 0.2s ease;
+        }
+
+        .btn-toggle-pw:hover {
+            color: var(--text-sub);
+        }
+
+        .btn-login {
+            width: 100%;
+            height: 48px;
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            color: #FFFFFF;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 26px;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+            filter: brightness(1.05);
+        }
+
+        .btn-login:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.15);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            font-size: 11px;
+            color: var(--text-mute);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .footer a {
+            color: var(--c-primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decor">
+        <div class="bg-decor-circle decor-1"></div>
+        <div class="bg-decor-circle decor-2"></div>
+    </div>
+
+    <div class="container">
+        <div class="login-card">
+            <div class="header">
+                <div class="logo-box">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h1 class="title">RS Madina</h1>
+                <p class="subtitle">Dashboard Direksi & Manajemen</p>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="errorMsg" class="error-banner hidden">
+                <i class="fas fa-circle-exclamation"></i>
+                <span>Username atau password tidak sesuai.</span>
+            </div>
+
+            <form id="loginForm" method="POST" action="/login" autocomplete="on">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-control">
+                        <input type="text" id="username" name="username" placeholder="Masukkan username" required autofocus>
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-control">
+                        <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+                        <i class="fas fa-shield-halved"></i>
+                        <button type="button" class="btn-toggle-pw" onclick="togglePassword()" aria-label="Tampilkan password">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">
+                    <span>Masuk Dashboard</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="footer">
+                <p>&copy; 2026 RS Madina Bukittinggi</p>
+                <p>Sistem Informasi Manajemen Eksekutif</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check for error parameter in URL query string
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('error') === '1') {
+                document.getElementById('errorMsg').classList.remove('hidden');
+            }
+        })();
+
+        function togglePassword() {
+            const pw = document.getElementById('password');
+            const icon = document.getElementById('eyeIcon');
+            if (pw.type === 'password') {
+                pw.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                pw.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            if (window.location.port === '5000') {
+                // Let the browser submit the form natively to Flask POST /login
+                return;
+            }
+            
+            e.preventDefault();
+            const un = document.getElementById('username').value;
+            const pw = document.getElementById('password').value;
+            
+            if (un === 'admin' && pw === 'root') {
+                // Simulate session
+                sessionStorage.setItem('user', 'admin');
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('errorMsg').classList.remove('hidden');
+                // shake effect
+                const banner = document.getElementById('errorMsg');
+                banner.style.animation = 'none';
+                banner.offsetHeight; // trigger reflow
+                banner.style.animation = 'shake 0.5s ease-in-out';
+            }
+        });
+    </script>
+</body>
+</html>

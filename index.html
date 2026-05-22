@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Direksi — RS Madina Bukittinggi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script>
+        // Session Guard for static hosting (Live Server)
+        if (window.location.port !== '5000') {
+            if (sessionStorage.getItem('user') !== 'admin') {
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <!-- ===================== SIDEBAR ===================== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <div class="sb-icon"><i class="fas fa-hospital"></i></div>
+                <div class="sb-text">
+                    <span class="sb-title" id="sbTitle">—</span>
+                    <span class="sb-sub">Dashboard Direksi</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" id="sidebarNav">
+                <a href="#" class="nav-item active" data-view="view-dashboard" data-tooltip="Dashboard">
+                    <i class="fas fa-chart-pie"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-pelayanan" data-tooltip="Pelayanan">
+                    <i class="fas fa-procedures"></i><span>Pelayanan</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-keuangan" data-tooltip="Keuangan">
+                    <i class="fas fa-wallet"></i><span>Keuangan</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-sdm" data-tooltip="SDM">
+                    <i class="fas fa-users"></i><span>SDM</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-mutu" data-tooltip="Mutu">
+                    <i class="fas fa-award"></i><span>Mutu</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-farmasi" data-tooltip="Farmasi">
+                    <i class="fas fa-pills"></i><span>Farmasi</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-ipsrs" data-tooltip="IPSRS">
+                    <i class="fas fa-tools"></i><span>IPSRS</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-komplain" data-tooltip="Komplain">
+                    <i class="fas fa-comment-dots"></i><span>Komplain</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-laporan" data-tooltip="Laporan">
+                    <i class="fas fa-file-alt"></i><span>Laporan</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-analytics" data-tooltip="Analytics">
+                    <i class="fas fa-chart-line"></i><span>Analytics</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-risiko" data-tooltip="Risiko">
+                    <i class="fas fa-exclamation-triangle"></i><span>Risiko</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-pengaturan" data-tooltip="Pengaturan">
+                    <i class="fas fa-cog"></i><span>Pengaturan</span>
+                </a>
+                <a href="#" class="nav-item" data-view="view-manajemen" data-tooltip="Manajemen Data">
+                    <i class="fas fa-database"></i><span>Manajemen Data</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sf-update">
+                    <i class="fas fa-sync-alt"></i>
+                    <span id="sidebarTimestamp">—</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===================== MAIN ===================== -->
+        <main class="main">
+            <div class="sidebar-overlay" onclick="document.getElementById('sidebarToggle').click()"></div>
+            <!-- TOPBAR -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="topbar-btn sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <div style="position: relative;">
+                        <button class="topbar-btn calendar-btn" id="calendarBtn">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span id="calendarLabel">-</span>
+                        </button>
+                    </div>
+
+                    <button class="topbar-btn filter-btn" id="filterBtn">
+                        <i class="fas fa-filter"></i>
+                        <span>Filter</span>
+                    </button>
+                </div>
+                <div class="topbar-right">
+                    <!-- Notification Bell -->
+                    <div class="notif-wrap" id="notifWrap">
+                        <button class="topbar-btn notif-btn" id="notifBtn" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="notif-badge" id="notifBadge" style="display:none;">0</span>
+                        </button>
+                        <!-- Notification Dropdown -->
+                        <div class="notif-dropdown" id="notifDropdown">
+                            <div class="notif-header">
+                                <span class="notif-title">Notifikasi</span>
+                                <button class="notif-mark-read" id="notifMarkRead">Tandai semua dibaca</button>
+                            </div>
+                            <div class="notif-list" id="notifList">
+                                <!-- Filled by JS -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User Chip -->
+                    <div class="user-chip-wrap" id="userChipWrap">
+                        <button class="user-chip" id="userChip">
+                            <div class="user-avatar" id="userAvatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <span class="user-name" id="userName">—</span>
+                            <i class="fas fa-chevron-down user-caret"></i>
+                        </button>
+                        <!-- User Dropdown -->
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="ud-header">
+                                <div class="ud-avatar" id="udAvatar"><i class="fas fa-user"></i></div>
+                                <div class="ud-info">
+                                    <span class="ud-name" id="udName">—</span>
+                                    <span class="ud-role" id="udRole">—</span>
+                                </div>
+                            </div>
+                            <div class="ud-divider"></div>
+                            <a href="#" class="ud-item" data-action="profile"><i class="fas fa-user-circle"></i>Profil Saya</a>
+                            <a href="#" class="ud-item" data-action="settings"><i class="fas fa-cog"></i>Pengaturan</a>
+                            <div class="ud-divider"></div>
+                            <a href="login.html" class="ud-item ud-logout"><i class="fas fa-sign-out-alt"></i>Keluar</a>
+                        </div>
+                    </div>
+
+                    <!-- Export Button -->
+                    <button class="export-btn" id="exportBtn">
+                        <i class="fas fa-download"></i>
+                        <span>Export</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- ===================== CONTENT AREA ===================== -->
+            <div class="content" id="contentArea">
+
+                <!-- ============ VIEW: DASHBOARD ============ -->
+                <section class="view view-active" id="view-dashboard">
+                    <!-- KPI ROW -->
+                    <div class="kpi-row">
+                        <!-- KPI 1: BOR -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="bor" data-ctx-view="view-pelayanan">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-teal"><i class="fas fa-bed"></i></div>
+                                <span class="kpi-badge" id="kpiBadgeBor"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValBor">—</div>
+                            <div class="kpi-label">BOR (Hari Ini)</div>
+                            <a href="#" class="detail-link" data-view="view-pelayanan">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- KPI 2: Pasien Hari Ini -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="kunjungan" data-ctx-view="view-pelayanan">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-blue"><i class="fas fa-user-injured"></i></div>
+                                <span class="kpi-badge" id="kpiBadgeKunjungan"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValKunjungan">—</div>
+                            <div class="kpi-label">Pasien Hari Ini</div>
+                            <a href="#" class="detail-link" data-view="view-pelayanan">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- KPI 3: Pendapatan Hari Ini -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="pendapatan" data-ctx-view="view-keuangan">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-green"><i class="fas fa-money-bill-wave"></i></div>
+                                <span class="kpi-badge" id="kpiBadgePendapatan"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValPendapatan">—</div>
+                            <div class="kpi-label">Pendapatan Hari Ini</div>
+                            <a href="#" class="detail-link" data-view="view-keuangan">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- KPI 4: Komplain Aktif -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="komplain" data-ctx-view="view-komplain">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-orange"><i class="fas fa-exclamation-circle"></i></div>
+                                <span class="kpi-badge" id="kpiBadgeKomplain"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValKomplain">—</div>
+                            <div class="kpi-label">Komplain Aktif</div>
+                            <a href="#" class="detail-link" data-view="view-komplain">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- KPI 5: Cashflow -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="cashflow" data-ctx-view="view-keuangan">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-purple"><i class="fas fa-chart-pie"></i></div>
+                                <span class="kpi-badge" id="kpiBadgeCashflow"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValCashflow">—</div>
+                            <div class="kpi-label">Cashflow (Bulan Ini)</div>
+                            <a href="#" class="detail-link" data-view="view-keuangan">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                        <!-- KPI 6: TT Tersedia -->
+                        <div class="kpi-card ctx-enabled" data-ctx-kpi="tt_tersedia" data-ctx-view="view-pelayanan">
+                            <div class="kpi-top">
+                                <div class="kpi-icon kpi-icon-red"><i class="fas fa-hospital-alt"></i></div>
+                                <span class="kpi-badge" id="kpiBadgeTt"></span>
+                            </div>
+                            <div class="kpi-val" id="kpiValTt">—</div>
+                            <div class="kpi-label">TT Tersedia</div>
+                            <a href="#" class="detail-link" data-view="view-pelayanan">Lihat Detail <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- ROW A: BOR Trend, Kunjungan, Pendapatan Donut -->
+                    <div class="row row-a">
+                        <!-- BOR Trend -->
+                        <div class="card ctx-enabled" data-ctx-kpi="bor_trend">
+                            <div class="card-head">
+                                <h3 class="card-title">BOR Trend</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="borChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Kunjungan Pasien -->
+                        <div class="card ctx-enabled" data-ctx-kpi="kunjungan_detail">
+                            <div class="card-head">
+                                <h3 class="card-title">Kunjungan Pasien</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="visit-list">
+                                    <div class="visit-item">
+                                        <div class="vi-left">
+                                            <div class="vi-icon vi-icon-blue"><i class="fas fa-door-open"></i></div>
+                                            <span class="vi-label">Rawat Jalan</span>
+                                        </div>
+                                        <div class="vi-right">
+                                            <span class="vi-val" id="viRj">—</span>
+                                            <span class="vi-chg" id="viRjChg"></span>
+                                        </div>
+                                    </div>
+                                    <div class="visit-item">
+                                        <div class="vi-left">
+                                            <div class="vi-icon vi-icon-teal"><i class="fas fa-bed"></i></div>
+                                            <span class="vi-label">Rawat Inap</span>
+                                        </div>
+                                        <div class="vi-right">
+                                            <span class="vi-val" id="viRi">—</span>
+                                            <span class="vi-chg" id="viRiChg"></span>
+                                        </div>
+                                    </div>
+                                    <div class="visit-item">
+                                        <div class="vi-left">
+                                            <div class="vi-icon vi-icon-red"><i class="fas fa-ambulance"></i></div>
+                                            <span class="vi-label">IGD</span>
+                                        </div>
+                                        <div class="vi-right">
+                                            <span class="vi-val" id="viIgd">—</span>
+                                            <span class="vi-chg" id="viIgdChg"></span>
+                                        </div>
+                                    </div>
+                                    <div class="visit-item">
+                                        <div class="vi-left">
+                                            <div class="vi-icon vi-icon-purple"><i class="fas fa-flask"></i></div>
+                                            <span class="vi-label">Penunjang</span>
+                                        </div>
+                                        <div class="vi-right">
+                                            <span class="vi-val" id="viPen">—</span>
+                                            <span class="vi-chg" id="viPenChg"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pendapatan Donut -->
+                        <div class="card ctx-enabled" data-ctx-kpi="pendapatan_detail">
+                            <div class="card-head">
+                                <h3 class="card-title">Pendapatan</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="pend-wrap">
+                                    <div class="pend-donut">
+                                        <canvas id="pendChart"></canvas>
+                                        <div class="pend-center">
+                                            <span class="pend-total-label">Total</span>
+                                            <span class="pend-total-val" id="pendTotal">—</span>
+                                        </div>
+                                    </div>
+                                    <div class="leg-list" id="pendLegend">
+                                        <!-- Filled by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROW B: Top 5 Pendapatan, Ringkasan Keuangan, Komplain -->
+                    <div class="row row-b">
+                        <!-- Top 5 Unit Pendapatan -->
+                        <div class="card ctx-enabled" data-ctx-kpi="top_unit">
+                            <div class="card-head">
+                                <h3 class="card-title">Top 5 Unit Pendapatan</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="bar-list" id="barList">
+                                    <!-- Filled by JS -->
+                                </div>
+                                <div class="bar-footer" id="barFooter">
+                                    <span>—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Ringkasan Keuangan -->
+                        <div class="card ctx-enabled" data-ctx-kpi="ringkasan_keuangan">
+                            <div class="card-head">
+                                <h3 class="card-title">Ringkasan Keuangan</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="fin-grid" id="finGrid">
+                                    <div class="fin-item">
+                                        <span class="fin-label">Pendapatan</span>
+                                        <span class="fin-val" id="finPendapatan">—</span>
+                                        <span class="fin-chg" id="finPendapatanChg"></span>
+                                    </div>
+                                    <div class="fin-item">
+                                        <span class="fin-label">Pengeluaran</span>
+                                        <span class="fin-val" id="finPengeluaran">—</span>
+                                        <span class="fin-chg" id="finPengeluaranChg"></span>
+                                    </div>
+                                    <div class="fin-item">
+                                        <span class="fin-label">Laba Bersih</span>
+                                        <span class="fin-val" id="finLaba">—</span>
+                                        <span class="fin-chg" id="finLabaChg"></span>
+                                    </div>
+                                    <div class="fin-item">
+                                        <span class="fin-label">Piutang</span>
+                                        <span class="fin-val" id="finPiutang">—</span>
+                                        <span class="fin-chg" id="finPiutangChg"></span>
+                                    </div>
+                                </div>
+                                <div class="cf-section">
+                                    <div class="cf-header">
+                                        <span class="cf-label">Cashflow Bulanan</span>
+                                        <span class="cf-val" id="cfVal">—</span>
+                                    </div>
+                                    <div class="cf-chart-wrap">
+                                        <canvas id="cfChart"></canvas>
+                                    </div>
+                                    <div class="cf-warn" id="cfWarn" style="display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Komplain Pasien -->
+                        <div class="card ctx-enabled" data-ctx-kpi="komplain_detail">
+                            <div class="card-head">
+                                <h3 class="card-title">Komplain Pasien</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="kom-wrap">
+                                    <div class="kom-donut">
+                                        <canvas id="komChart"></canvas>
+                                        <div class="kom-center">
+                                            <span class="kom-total-label">Total</span>
+                                            <span class="kom-total-val" id="komTotal">—</span>
+                                        </div>
+                                    </div>
+                                    <div class="kom-leg" id="komLegend">
+                                        <!-- Filled by JS -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ROW C: SDM, Bed Availability, Alerts -->
+                    <div class="row row-c">
+                        <!-- Kehadiran SDM -->
+                        <div class="card ctx-enabled" data-ctx-kpi="sdm_kehadiran">
+                            <div class="card-head">
+                                <h3 class="card-title">Kehadiran SDM</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="sdm-grid" id="sdmGrid">
+                                    <div class="sdm-box sdm-hadir">
+                                        <span class="sdm-label">Hadir</span>
+                                        <span class="sdm-val" id="sdmHadir">—</span>
+                                        <span class="sdm-pct" id="sdmHadirPct"></span>
+                                    </div>
+                                    <div class="sdm-box sdm-izin">
+                                        <span class="sdm-label">Izin</span>
+                                        <span class="sdm-val" id="sdmIzin">—</span>
+                                        <span class="sdm-pct" id="sdmIzinPct"></span>
+                                    </div>
+                                    <div class="sdm-box sdm-sakit">
+                                        <span class="sdm-label">Sakit</span>
+                                        <span class="sdm-val" id="sdmSakit">—</span>
+                                        <span class="sdm-pct" id="sdmSakitPct"></span>
+                                    </div>
+                                    <div class="sdm-box sdm-cuti">
+                                        <span class="sdm-label">Cuti</span>
+                                        <span class="sdm-val" id="sdmCuti">—</span>
+                                        <span class="sdm-pct" id="sdmCutiPct"></span>
+                                    </div>
+                                    <div class="sdm-box sdm-alpha">
+                                        <span class="sdm-label">Alpha</span>
+                                        <span class="sdm-val" id="sdmAlpha">—</span>
+                                        <span class="sdm-pct" id="sdmAlphaPct"></span>
+                                    </div>
+                                    <div class="sdm-box sdm-total">
+                                        <span class="sdm-label">Total</span>
+                                        <span class="sdm-val" id="sdmTotal">—</span>
+                                        <span class="sdm-pct" id="sdmTotalPct"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bed Availability -->
+                        <div class="card ctx-enabled" data-ctx-kpi="bed_availability">
+                            <div class="card-head">
+                                <h3 class="card-title">Ketersediaan Tempat Tidur</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="bed-compact">
+                                    <div class="bed-ring-wrap">
+                                        <canvas id="bedChart"></canvas>
+                                        <div class="bed-ring-center">
+                                            <span class="bed-ring-pct" id="bedPct">—</span>
+                                            <span class="bed-ring-sub">Terisi</span>
+                                        </div>
+                                    </div>
+                                    <div class="bed-info">
+                                        <div class="bed-capacity-bar">
+                                            <div class="bed-cap-fill" id="bedCapFill" style="width:0%"></div>
+                                        </div>
+                                        <div class="bed-legend">
+                                            <div class="bed-leg-item">
+                                                <span class="bed-leg-dot" style="background:var(--c-primary);"></span>
+                                                <span class="bed-leg-label">Terisi</span>
+                                                <span class="bed-leg-val" id="bsTerisi">—</span>
+                                            </div>
+                                            <div class="bed-leg-item">
+                                                <span class="bed-leg-dot" style="background:var(--c-success);"></span>
+                                                <span class="bed-leg-label">Kosong</span>
+                                                <span class="bed-leg-val" id="bsKosong">—</span>
+                                            </div>
+                                            <div class="bed-leg-item bed-leg-total">
+                                                <span class="bed-leg-dot" style="background:var(--text-main);"></span>
+                                                <span class="bed-leg-label">Kapasitas</span>
+                                                <span class="bed-leg-val" id="bsTotalTt">—</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alert & Peringatan -->
+                        <div class="card ctx-enabled" data-ctx-kpi="alerts">
+                            <div class="card-head">
+                                <h3 class="card-title">Alert &amp; Peringatan</h3>
+                                <button class="card-action" aria-label="More"><i class="fas fa-ellipsis-h"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert-list" id="alertList">
+                                    <!-- Filled by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ VIEW: PELAYANAN ============ -->
+                <section class="view" id="view-pelayanan"></section>
+
+                <!-- ============ VIEW: KEUANGAN ============ -->
+                <section class="view" id="view-keuangan"></section>
+
+                <!-- ============ VIEW: SDM ============ -->
+                <section class="view" id="view-sdm"></section>
+
+                <!-- ============ VIEW: MUTU ============ -->
+                <section class="view" id="view-mutu"></section>
+
+                <!-- ============ VIEW: FARMASI ============ -->
+                <section class="view" id="view-farmasi"></section>
+
+                <!-- ============ VIEW: IPSRS ============ -->
+                <section class="view" id="view-ipsrs"></section>
+
+                <!-- ============ VIEW: KOMPLAIN ============ -->
+                <section class="view" id="view-komplain"></section>
+
+                <!-- ============ VIEW: LAPORAN ============ -->
+                <section class="view" id="view-laporan"></section>
+
+                <!-- ============ VIEW: ANALYTICS ============ -->
+                <section class="view" id="view-analytics"></section>
+
+                <!-- ============ VIEW: RISIKO ============ -->
+                <section class="view" id="view-risiko"></section>
+
+                <!-- ============ VIEW: PENGATURAN ============ -->
+                <section class="view" id="view-pengaturan"></section>
+
+                <!-- ============ VIEW: MANAJEMEN DATA ============ -->
+                <section class="view" id="view-manajemen">
+                    <div class="dm-toolbar">
+                        <div class="dm-toolbar-left">
+                            <label for="dmTablePicker" class="dm-label">Tabel:</label>
+                            <select id="dmTablePicker" class="dm-select">
+                                <option value="">— Pilih Tabel —</option>
+                            </select>
+                        </div>
+                        <div class="dm-toolbar-right">
+                            <div class="dm-search">
+                                <i class="fas fa-search"></i>
+                                <input type="text" id="dmSearch" placeholder="Cari data..." aria-label="Search">
+                            </div>
+                            <button class="dm-btn dm-btn-primary" id="dmAddBtn">
+                                <i class="fas fa-plus"></i> Tambah
+                            </button>
+                            <button class="dm-btn dm-btn-outline" id="dmRefreshBtn" title="Refresh Data">
+                                <i class="fas fa-sync-alt"></i>
+                            </button>
+                            <button class="dm-btn dm-btn-outline" id="dmExportCsvBtn" title="Export to CSV">
+                                <i class="fas fa-file-csv"></i> Export
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dm-stats-bar" id="dmStatsBar">
+                        <span id="dmStatsText">—</span>
+                    </div>
+
+                    <div class="dm-table-wrap">
+                        <table class="dm-table" id="dmTable">
+                            <thead id="dmThead"><tr></tr></thead>
+                            <tbody id="dmTbody"></tbody>
+                        </table>
+                        <div class="dm-empty" id="dmEmpty" style="display:none;">
+                            <i class="fas fa-inbox"></i>
+                            <p>Pilih tabel untuk menampilkan data</p>
+                        </div>
+                    </div>
+
+                    <div class="dm-pagination" id="dmPagination">
+                        <button class="dm-btn dm-btn-sm" id="dmPrevPage" disabled><i class="fas fa-chevron-left"></i></button>
+                        <span class="dm-page-info" id="dmPageInfo">—</span>
+                        <button class="dm-btn dm-btn-sm" id="dmNextPage" disabled><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===================== CONTEXT MENU ===================== -->
+    <div class="custom-context-menu" id="contextMenu" style="display:none;">
+        <div class="ctx-title" id="ctxTitle">—</div>
+        <div class="ctx-divider"></div>
+        <button class="ctx-item" data-action="open-tab"><i class="fas fa-external-link-alt"></i>Buka Tab</button>
+        <button class="ctx-item" data-action="manage"><i class="fas fa-database"></i>Kelola Data</button>
+        <button class="ctx-item" data-action="refresh"><i class="fas fa-sync-alt"></i>Refresh</button>
+        <button class="ctx-item" data-action="export-csv"><i class="fas fa-file-csv"></i>Export CSV</button>
+    </div>
+
+    <!-- ===================== ADD/EDIT MODAL ===================== -->
+    <div class="modal-overlay" id="modalOverlay" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">—</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="modalForm" class="form-grid">
+                    <!-- Filled by JS -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="dm-btn dm-btn-outline" id="modalCancel">Batal</button>
+                <button type="button" class="dm-btn dm-btn-primary" id="modalSave">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== DELETE CONFIRM MODAL ===================== -->
+    <div class="confirm-modal-overlay" id="confirmOverlay" style="display:none;">
+        <div class="confirm-modal">
+            <div class="confirm-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h3 class="confirm-title">Hapus Data?</h3>
+            <p class="confirm-text" id="confirmText">Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat dibatalkan.</p>
+            <div class="confirm-actions">
+                <button class="dm-btn dm-btn-outline" id="confirmCancel">Batal</button>
+                <button class="dm-btn dm-btn-danger" id="confirmDelete">Hapus</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== TOAST ===================== -->
+    <div class="dm-toast" id="dmToast">
+        <i class="fas fa-check-circle"></i>
+        <span id="dmToastMsg">—</span>
+    </div>
+
+    <!-- ===================== PERIOD MODAL ===================== -->
+    <div class="period-modal-overlay" id="periodModalOverlay">
+        <div class="period-modal">
+            <div class="period-modal-header">
+                <h3><i class="fas fa-calendar-alt" style="margin-right:10px; color:var(--c-primary);"></i>Pilih Periode</h3>
+                <button class="period-modal-close" id="periodModalClose">&times;</button>
+            </div>
+            <div class="period-modal-body">
+                <div class="period-year-nav">
+                    <button class="period-year-btn" id="periodYearPrev"><i class="fas fa-chevron-left"></i></button>
+                    <span class="period-year-label" id="periodYearLabel">2026</span>
+                    <button class="period-year-btn" id="periodYearNext"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="period-month-grid" id="periodMonthGrid">
+                    <!-- 12 month buttons rendered by JS -->
+                </div>
+            </div>
+            <div class="period-modal-footer">
+                <span class="period-selected-label" id="periodSelectedLabel">Belum dipilih</span>
+                <button class="dm-btn dm-btn-primary" id="btnApplyPeriod" style="padding:10px 28px; font-weight:600;">
+                    <i class="fas fa-check" style="margin-right:6px;"></i>Terapkan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== SCRIPTS ===================== -->
+    <script src="static/js/dataManager.js"></script>
+    <script src="static/js/app.js"></script>
+</body>
+</html>

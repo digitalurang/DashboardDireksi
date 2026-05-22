@@ -1,0 +1,856 @@
+{
+  "metadata": {
+    "source_file": "SENSUS POLI UMUM 2026.xlsx",
+    "sheet_count": 5,
+    "sheets": [
+      "JUMLAH PASIEN",
+      "SENSUS",
+      "DOKTER",
+      "DIAGNOSA",
+      "Sheet4"
+    ],
+    "generated_structure": "normalized_json"
+  },
+  "data": {
+    "JUMLAH PASIEN": {
+      "header_row": 9,
+      "columns": [
+        "column_1",
+        "januari",
+        "27",
+        "orang",
+        "column_5",
+        "column_6"
+      ],
+      "records": [
+        {
+          "januari": "Februari",
+          "27": 30,
+          "orang": "Orang"
+        },
+        {
+          "januari": "Maret",
+          "27": 34,
+          "orang": "Orang"
+        },
+        {
+          "januari": "April",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Mei",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Juni",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Juli",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Agustus",
+          "orang": "Orang"
+        },
+        {
+          "januari": "September",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Oktober",
+          "orang": "Orang"
+        },
+        {
+          "januari": "November",
+          "orang": "Orang"
+        },
+        {
+          "januari": "Desember",
+          "orang": "Orang"
+        },
+        {
+          "januari": "JUMLAH",
+          "27": 91,
+          "orang": "Orang"
+        },
+        {
+          "januari": "Sumber Data : Unit Rekam Medis RSU. MADINA"
+        }
+      ]
+    },
+    "SENSUS": {
+      "header_row": 14,
+      "columns": [
+        "januari",
+        "column_2",
+        "column_3",
+        "4",
+        "19",
+        "4_2",
+        "27",
+        "6",
+        "21",
+        "27_2",
+        "11",
+        "16",
+        "27_3",
+        "6_2",
+        "21_2",
+        "27_4",
+        "column_17",
+        "23",
+        "2",
+        "column_20",
+        "1",
+        "column_22",
+        "column_23",
+        "column_24",
+        "column_25",
+        "1_2",
+        "column_27",
+        "27_5",
+        "5",
+        "1_3",
+        "column_31",
+        "column_32",
+        "column_33",
+        "column_34",
+        "column_35",
+        "column_36",
+        "column_37",
+        "column_38",
+        "21_3",
+        "27_6"
+      ],
+      "records": [
+        {
+          "januari": "Februari",
+          "column_2": 0,
+          "column_3": 2,
+          "4": 3,
+          "19": 15,
+          "4_2": 10,
+          "27": 30,
+          "6": 19,
+          "21": 11,
+          "27_2": 30,
+          "11": 17,
+          "16": 13,
+          "27_3": 30,
+          "6_2": 6,
+          "21_2": 24,
+          "27_4": 30,
+          "column_17": 0,
+          "23": 24,
+          "2": 2,
+          "column_20": 0,
+          "1": 1,
+          "column_22": 0,
+          "column_23": 0,
+          "column_24": 0,
+          "column_25": 0,
+          "1_2": 3,
+          "column_27": 0,
+          "27_5": 30,
+          "5": 1,
+          "1_3": 1,
+          "column_31": 0,
+          "column_32": 0,
+          "column_33": 0,
+          "column_34": 0,
+          "column_35": 0,
+          "column_36": 0,
+          "column_37": 0,
+          "column_38": 0,
+          "21_3": 28,
+          "27_6": 30
+        },
+        {
+          "januari": "Maret",
+          "column_2": 0,
+          "column_3": 0,
+          "4": 3,
+          "19": 19,
+          "4_2": 12,
+          "27": 34,
+          "6": 13,
+          "21": 21,
+          "27_2": 34,
+          "11": 21,
+          "16": 13,
+          "27_3": 34,
+          "6_2": 12,
+          "21_2": 22,
+          "27_4": 34,
+          "column_17": 0,
+          "23": 27,
+          "2": 3,
+          "column_20": 0,
+          "1": 1,
+          "column_22": 0,
+          "column_23": 1,
+          "column_24": 0,
+          "column_25": 0,
+          "1_2": 2,
+          "column_27": 0,
+          "27_5": 34,
+          "5": 0,
+          "1_3": 2,
+          "column_31": 0,
+          "column_32": 0,
+          "column_33": 1,
+          "column_34": 0,
+          "column_35": 0,
+          "column_36": 0,
+          "column_37": 0,
+          "column_38": 0,
+          "21_3": 31,
+          "27_6": 34
+        },
+        {
+          "januari": "April",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Mei",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Juni",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Juli",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Agustus",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "September",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Oktober",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "November",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "Desember",
+          "27": 0,
+          "27_2": 0,
+          "27_3": 0,
+          "27_4": 0,
+          "27_5": 0,
+          "27_6": 0
+        },
+        {
+          "januari": "JUMLAH",
+          "column_2": 0,
+          "column_3": 2,
+          "4": 10,
+          "19": 53,
+          "4_2": 26,
+          "27": 91,
+          "6": 38,
+          "21": 53,
+          "27_2": 91,
+          "11": 49,
+          "16": 42,
+          "27_3": 91,
+          "6_2": 24,
+          "21_2": 67,
+          "27_4": 91,
+          "column_17": 0,
+          "23": 74,
+          "2": 7,
+          "column_20": 0,
+          "1": 3,
+          "column_22": 0,
+          "column_23": 1,
+          "column_24": 0,
+          "column_25": 0,
+          "1_2": 6,
+          "column_27": 0,
+          "27_5": 91,
+          "5": 6,
+          "1_3": 4,
+          "column_31": 0,
+          "column_32": 0,
+          "column_33": 1,
+          "column_34": 0,
+          "column_35": 0,
+          "column_36": 0,
+          "column_37": 0,
+          "column_38": 0,
+          "21_3": 80,
+          "27_6": 91
+        },
+        {
+          "januari": "Sumber Data : Unit Rekam Medis RSU. MADINA"
+        }
+      ]
+    },
+    "DOKTER": {
+      "header_row": 9,
+      "columns": [
+        "bulan",
+        "dr_nadya",
+        "dr_herik",
+        "dr_ikrima",
+        "dr_haris",
+        "dr_kartika",
+        "dr_zurriyati",
+        "dr_nursyifa",
+        "dr_nurul",
+        "dr_wiyola",
+        "jumlah",
+        "column_12",
+        "column_13",
+        "column_14",
+        "column_15",
+        "column_16",
+        "column_17",
+        "column_18",
+        "column_19",
+        "column_20",
+        "column_21",
+        "column_22"
+      ],
+      "records": [
+        {
+          "bulan": "Januari",
+          "dr_nadya": 4,
+          "dr_herik": 0,
+          "dr_ikrima": 0,
+          "dr_haris": 0,
+          "dr_kartika": 23,
+          "dr_zurriyati": 0,
+          "dr_nursyifa": 0,
+          "dr_nurul": 0,
+          "dr_wiyola": 0,
+          "jumlah": 27
+        },
+        {
+          "bulan": "Februari",
+          "dr_nadya": 0,
+          "dr_herik": 0,
+          "dr_ikrima": 0,
+          "dr_haris": 0,
+          "dr_kartika": 27,
+          "dr_zurriyati": 0,
+          "dr_nursyifa": 0,
+          "dr_nurul": 0,
+          "dr_wiyola": 3,
+          "jumlah": 30
+        },
+        {
+          "bulan": "Maret",
+          "dr_nadya": 2,
+          "dr_herik": 0,
+          "dr_ikrima": 0,
+          "dr_haris": 0,
+          "dr_kartika": 31,
+          "dr_zurriyati": 0,
+          "dr_nursyifa": 0,
+          "dr_nurul": 0,
+          "dr_wiyola": 1,
+          "jumlah": 34
+        },
+        {
+          "bulan": "April",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Mei",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Juni",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Juli",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Agustus",
+          "jumlah": 0
+        },
+        {
+          "bulan": "September",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Oktober",
+          "jumlah": 0
+        },
+        {
+          "bulan": "November",
+          "jumlah": 0
+        },
+        {
+          "bulan": "Desember",
+          "jumlah": 0
+        },
+        {
+          "bulan": "JUMLAH",
+          "dr_nadya": 6,
+          "dr_herik": 0,
+          "dr_ikrima": 0,
+          "dr_haris": 0,
+          "dr_kartika": 81,
+          "dr_zurriyati": 0,
+          "dr_nursyifa": 0,
+          "dr_nurul": 0,
+          "dr_wiyola": 4,
+          "jumlah": 91
+        },
+        {
+          "bulan": "Sumber : Unit Rekam Medis RSU. MADINA"
+        }
+      ]
+    },
+    "DIAGNOSA": {
+      "header_row": 3,
+      "columns": [
+        "no",
+        "kode_icd",
+        "diagnosa",
+        "jumlah",
+        "column_5",
+        "column_6",
+        "column_7",
+        "column_8",
+        "column_9",
+        "column_10",
+        "column_11",
+        "column_12",
+        "column_13"
+      ],
+      "records": [
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 2. DIAGNOSA POLI UMUM BULAN FEBRUARI 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 3. DIAGNOSA POLI UMUM BULAN MARET 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 4. DIAGNOSA POLI UMUM BULAN APRIL 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 5. DIAGNOSA POLI UMUM BULAN MEI 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 6. DIAGNOSA POLI UMUM BULAN JUNI 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 7. DIAGNOSA POLI UMUM BULAN JUlI 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": 2
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 8. DIAGNOSA POLI UMUM BULAN AGUSTUS 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 9. DIAGNOSA POLI UMUM BULAN SEPTEMBER 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 10. DIAGNOSA POLI UMUM BULAN OKTOBER 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 11. DIAGNOSA POLI UMUM BULAN NOVEMBER 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        },
+        {
+          "no": "TABEL 12. DIAGNOSA POLI UMUM BULAN DESEMBER 2026"
+        },
+        {
+          "no": "NO",
+          "kode_icd": "KODE ICD",
+          "diagnosa": "DIAGNOSA",
+          "jumlah": "JUMLAH"
+        },
+        {
+          "no": 1,
+          "kode_icd": "(blank)",
+          "diagnosa": "(blank)",
+          "jumlah": 0
+        },
+        {
+          "no": "Grand Total",
+          "jumlah": 0
+        }
+      ]
+    },
+    "Sheet4": {
+      "header_row": 6,
+      "columns": [
+        "1",
+        "jumlah_pasien",
+        "column_3",
+        "column_4",
+        "column_5",
+        "column_6",
+        "column_7",
+        "column_8",
+        "column_9"
+      ],
+      "records": [
+        {
+          "1": "{ 2 }",
+          "jumlah_pasien": "Usia"
+        },
+        {
+          "jumlah_pasien": "Jenis Kelamin"
+        },
+        {
+          "jumlah_pasien": "Pasien Lama dan Baru"
+        },
+        {
+          "jumlah_pasien": "Asal Bukittinggi dan Luar Bukittinggi"
+        },
+        {
+          "jumlah_pasien": "Propinsi"
+        },
+        {
+          "jumlah_pasien": "Asuransi"
+        },
+        {
+          "1": "{ 3 }",
+          "jumlah_pasien": "Dokter"
+        },
+        {
+          "column_3": "ARSIP REKAM MEDIS RSU. MADINA"
+        }
+      ]
+    }
+  },
+  "analysis": {
+    "total_sheets": 5,
+    "total_records_detected": 99,
+    "largest_sheet": "DIAGNOSA",
+    "sheet_summaries": [
+      {
+        "sheet": "JUMLAH PASIEN",
+        "header_detected_at_row": 9,
+        "total_records": 13,
+        "top_numeric_columns": [
+          [
+            "27",
+            3
+          ]
+        ]
+      },
+      {
+        "sheet": "SENSUS",
+        "header_detected_at_row": 14,
+        "total_records": 13,
+        "top_numeric_columns": [
+          [
+            "27",
+            12
+          ],
+          [
+            "27_2",
+            12
+          ],
+          [
+            "27_3",
+            12
+          ],
+          [
+            "27_4",
+            12
+          ],
+          [
+            "27_5",
+            12
+          ]
+        ]
+      },
+      {
+        "sheet": "DOKTER",
+        "header_detected_at_row": 9,
+        "total_records": 14,
+        "top_numeric_columns": [
+          [
+            "jumlah",
+            13
+          ],
+          [
+            "dr_nadya",
+            4
+          ],
+          [
+            "dr_herik",
+            4
+          ],
+          [
+            "dr_ikrima",
+            4
+          ],
+          [
+            "dr_haris",
+            4
+          ]
+        ]
+      },
+      {
+        "sheet": "DIAGNOSA",
+        "header_detected_at_row": 3,
+        "total_records": 51,
+        "top_numeric_columns": [
+          [
+            "jumlah",
+            24
+          ],
+          [
+            "no",
+            17
+          ]
+        ]
+      },
+      {
+        "sheet": "Sheet4",
+        "header_detected_at_row": 6,
+        "total_records": 8,
+        "top_numeric_columns": []
+      }
+    ],
+    "notes": [
+      "Header tabel dideteksi otomatis berdasarkan kepadatan isi.",
+      "Kolom duplikat telah dinormalisasi.",
+      "Nama kolom dibersihkan agar aman untuk database/API.",
+      "Baris kosong dibuang.",
+      "Data disusun per-sheet agar mudah diolah lebih lanjut."
+    ]
+  }
+}
